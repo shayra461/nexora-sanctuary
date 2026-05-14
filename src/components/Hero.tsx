@@ -65,14 +65,14 @@ export function Hero() {
 
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Layer 1 — base image with parallax + slow zoom */}
+      {/* Layer 1 — atmospheric base backdrop with parallax + slow zoom */}
       <div ref={layerImg} className="absolute inset-0 will-change-transform">
         <img
-          src={heroImg}
+          src={heroBackdrop}
           alt=""
           width={1920}
           height={1280}
-          className="h-[120%] w-full object-cover opacity-75"
+          className="h-[120%] w-full object-cover opacity-50"
           style={{ animation: "shimmer 18s ease-in-out infinite" }}
         />
       </div>
@@ -89,10 +89,35 @@ export function Hero() {
         <div className="absolute left-1/2 top-1/4 h-[60%] w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
       </div>
 
+      {/* Layer 4 — hero portrait (woman + golden neural network), counter-parallax */}
+      <div
+        ref={layerPortrait}
+        className="pointer-events-none absolute inset-y-0 right-0 z-[5] flex w-full items-center justify-end will-change-transform md:w-[62%]"
+      >
+        <div className="relative h-full w-full">
+          <img
+            src={heroImg}
+            alt="Luminous portrait — golden neural network unfolding from the mind"
+            width={1024}
+            height={1024}
+            className="absolute inset-0 h-full w-full object-cover object-right md:object-center"
+            style={{ animation: "shimmer 22s ease-in-out infinite" }}
+          />
+          {/* feathered edge into background */}
+          <div className="absolute inset-0"
+               style={{ background: "linear-gradient(to right, oklch(0.05 0.005 60) 0%, oklch(0.05 0.005 60 / 0.85) 18%, transparent 55%)" }} />
+          <div className="absolute inset-0"
+               style={{ background: "linear-gradient(to bottom, transparent 60%, oklch(0.05 0.005 60) 100%)" }} />
+          {/* gold halo */}
+          <div className="absolute right-[8%] top-[30%] h-[42%] w-[42%] rounded-full opacity-70 blur-3xl"
+               style={{ background: "radial-gradient(closest-side, oklch(0.78 0.16 60 / 0.45), transparent 70%)" }} />
+        </div>
+      </div>
+
       {/* Veils */}
       <div className="absolute inset-0" style={{ background: "var(--gradient-veil)" }} />
       <div className="absolute inset-0"
-           style={{ background: "radial-gradient(50% 60% at 50% 45%, transparent 30%, oklch(0.05 0.005 60 / 0.85) 90%)" }} />
+           style={{ background: "radial-gradient(60% 70% at 30% 50%, transparent 25%, oklch(0.05 0.005 60 / 0.7) 90%)" }} />
 
       {/* Foreground content */}
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-32 md:px-10">
