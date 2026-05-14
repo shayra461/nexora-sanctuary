@@ -131,6 +131,7 @@ function Index() {
             ]}
             image={communityImg}
             imageAlt="Constellation of golden nodes"
+            hue="teal"
           />
 
           <Waitlist />
