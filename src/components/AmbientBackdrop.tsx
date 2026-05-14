@@ -12,6 +12,28 @@ import bgWellness from "@/assets/section-wellness.jpg";
 export function AmbientBackdrop() {
   const glowRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const parallaxRef = useRef<HTMLDivElement>(null);
+
+  // Scroll parallax for themed background images
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const el = parallaxRef.current;
+        if (!el) return;
+        const layers = el.querySelectorAll<HTMLElement>("[data-depth]");
+        layers.forEach((l) => {
+          const d = parseFloat(l.dataset.depth || "0");
+          l.style.transform = `translate3d(0, ${y * d}px, 0)`;
+        });
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => { cancelAnimationFrame(raf); window.removeEventListener("scroll", onScroll); };
+  }, []);
 
   // Mouse-reactive lighting
   useEffect(() => {
