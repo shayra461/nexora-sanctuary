@@ -5,6 +5,7 @@ import { CinematicCanvas } from "@/components/CinematicCanvas";
 
 export function Hero() {
   const layerImg = useRef<HTMLDivElement>(null);
+  const layerPortrait = useRef<HTMLDivElement>(null);
   const layerText = useRef<HTMLDivElement>(null);
   const layerStreaks = useRef<HTMLDivElement>(null);
   const tiltRef = useRef<HTMLDivElement>(null);
