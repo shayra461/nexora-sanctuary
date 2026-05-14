@@ -166,10 +166,10 @@ export function ScrollChapters() {
                   transformStyle: "preserve-3d",
                 }}
               >
-                <div className="eyebrow justify-center">{c.eyebrow}</div>
+                <div className="eyebrow justify-center" style={{ textShadow: "0 2px 12px rgba(0,0,0,0.9)" }}>{c.eyebrow}</div>
                 <h3
                   className="font-display mt-8 text-[clamp(3rem,11vw,10rem)] leading-[0.95] tracking-tight"
-                  style={{ textShadow: "0 0 80px oklch(0.78 0.16 60 / 0.35)" }}
+                  style={{ textShadow: "0 4px 28px rgba(0,0,0,0.95), 0 0 80px oklch(0.78 0.16 60 / 0.4)" }}
                 >
                   <span className="italic text-gold-gradient">{c.title}</span>
                 </h3>
