@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import heroBg from "@/assets/hero-brain.jpg";
 import brain3d from "@/assets/neuro-brain-3d.png";
+import brainLoop from "@/assets/neuro-brain-loop.mp4";
 import { CinematicCanvas } from "@/components/CinematicCanvas";
 
 export function Hero() {
