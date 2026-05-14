@@ -173,7 +173,7 @@ export function ScrollChapters() {
                 >
                   <span className="italic text-gold-gradient">{c.title}</span>
                 </h3>
-                <p className="mx-auto mt-10 max-w-xl text-base text-muted-foreground md:text-lg">
+                <p className="mx-auto mt-10 max-w-xl text-base text-foreground/90 md:text-lg" style={{ textShadow: "0 2px 14px rgba(0,0,0,0.9)" }}>
                   {c.body}
                 </p>
               </div>
