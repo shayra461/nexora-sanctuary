@@ -120,8 +120,8 @@ export function Hero() {
            style={{ background: "radial-gradient(60% 70% at 30% 50%, transparent 25%, oklch(0.05 0.005 60 / 0.7) 90%)" }} />
 
       {/* Foreground content */}
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-32 md:px-10">
-        <div ref={layerText} className="will-change-transform" style={{ transformStyle: "preserve-3d" }}>
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 md:px-10">
+        <div ref={layerText} className="will-change-transform md:max-w-[58%]" style={{ transformStyle: "preserve-3d" }}>
           <div className="eyebrow animate-fade-up" style={{ animationDelay: "0.2s" }}>
             A New Era of Neuro Wellness
           </div>
