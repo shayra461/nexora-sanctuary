@@ -77,6 +77,7 @@ function Index() {
             image={musicImg}
             imageAlt="Cinematic sound wave in gold light"
             reverse
+            hue="amber"
           />
 
           <VideoShowcase />
@@ -95,6 +96,7 @@ function Index() {
             ]}
             image={wellnessImg}
             imageAlt="Silhouette in golden light"
+            hue="teal"
           />
 
           <PillarSection
@@ -112,6 +114,7 @@ function Index() {
             image={programsImg}
             imageAlt="Architectural sanctuary lit in gold"
             reverse
+            hue="amber"
           />
 
           <PillarSection
