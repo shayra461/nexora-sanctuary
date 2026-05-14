@@ -126,6 +126,20 @@ export function AmbientBackdrop() {
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       {/* deep base */}
       <div className="absolute inset-0 bg-[var(--color-ink)]" />
+
+      {/* themed parallax image stack — drifts on scroll */}
+      <div ref={parallaxRef} className="absolute inset-0">
+        <div data-depth="-0.15" className="absolute -left-[10%] top-[10vh] h-[70vh] w-[55vw] opacity-[0.18] will-change-transform">
+          <img src={bgNeural} alt="" className="h-full w-full object-cover" style={{ maskImage: "radial-gradient(closest-side, black 30%, transparent 75%)", WebkitMaskImage: "radial-gradient(closest-side, black 30%, transparent 75%)" }} />
+        </div>
+        <div data-depth="-0.08" className="absolute right-[-8%] top-[110vh] h-[80vh] w-[60vw] opacity-[0.16] will-change-transform">
+          <img src={bgSound} alt="" className="h-full w-full object-cover" style={{ maskImage: "radial-gradient(closest-side, black 25%, transparent 75%)", WebkitMaskImage: "radial-gradient(closest-side, black 25%, transparent 75%)" }} />
+        </div>
+        <div data-depth="-0.12" className="absolute left-[-5%] top-[230vh] h-[80vh] w-[60vw] opacity-[0.15] will-change-transform">
+          <img src={bgWellness} alt="" className="h-full w-full object-cover" style={{ maskImage: "radial-gradient(closest-side, black 25%, transparent 75%)", WebkitMaskImage: "radial-gradient(closest-side, black 25%, transparent 75%)" }} />
+        </div>
+      </div>
+
       {/* slow rotating ambient gold blob */}
       <div className="absolute -top-1/3 left-1/2 h-[120vh] w-[120vh] -translate-x-1/2 rounded-full opacity-50 animate-pulse-glow"
            style={{ background: "radial-gradient(closest-side, oklch(0.74 0.16 55 / 0.35), transparent 70%)" }} />
