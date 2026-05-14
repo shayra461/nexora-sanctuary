@@ -72,7 +72,8 @@ export function AmbientBackdrop() {
 
     let w = (canvas.width = window.innerWidth);
     let h = (canvas.height = window.innerHeight);
-    const particles = Array.from({ length: 70 }, () => ({
+    const count = window.innerWidth < 768 ? 18 : 36;
+    const particles = Array.from({ length: count }, () => ({
       x: Math.random() * w,
       y: Math.random() * h,
       r: Math.random() * 1.6 + 0.3,
