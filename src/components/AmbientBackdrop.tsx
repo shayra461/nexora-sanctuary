@@ -1,4 +1,7 @@
 import { useEffect, useRef } from "react";
+import bgNeural from "@/assets/hero-neuro-woman.png";
+import bgSound from "@/assets/section-music.jpg";
+import bgWellness from "@/assets/section-wellness.jpg";
 
 /**
  * Cinematic atmospheric backdrop:
