@@ -47,6 +47,9 @@
   --animate-fade-up: fade-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
   --animate-fade-in: fade-in 1.6s ease-out both;
   --animate-scroll-hint: scroll-hint 2.4s ease-in-out infinite;
+  --animate-float-slow: float-slow 9s ease-in-out infinite;
+  --animate-spin-slow: spin-slow 40s linear infinite;
+  --animate-spin-slow-reverse: spin-slow-reverse 60s linear infinite;
 }
 
 :root {
@@ -117,6 +120,16 @@
 @keyframes scroll-hint {
   0%, 100% { transform: translateY(0); opacity: 0.4; }
   50% { transform: translateY(10px); opacity: 1; }
+}
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-22px) rotate(1.5deg); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes spin-slow-reverse {
+  to { transform: rotate(-360deg); }
 }
 
 @layer base {

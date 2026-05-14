@@ -1,14 +1,15 @@
 import { useEffect, useRef } from "react";
-import heroImg from "@/assets/hero-neuro-woman.png";
-import heroBackdrop from "@/assets/hero-nexora.jpg";
+import heroBg from "@/assets/hero-brain.jpg";
+import brain3d from "@/assets/neuro-brain-3d.png";
 import { CinematicCanvas } from "@/components/CinematicCanvas";
 
 export function Hero() {
   const layerImg = useRef<HTMLDivElement>(null);
-  const layerPortrait = useRef<HTMLDivElement>(null);
+  const layerBrain = useRef<HTMLDivElement>(null);
   const layerText = useRef<HTMLDivElement>(null);
   const layerStreaks = useRef<HTMLDivElement>(null);
   const tiltRef = useRef<HTMLDivElement>(null);
+  const brainTiltRef = useRef<HTMLDivElement>(null);
 
   // Scroll parallax
   useEffect(() => {
@@ -21,10 +22,9 @@ export function Hero() {
           layerImg.current.style.transform = `translate3d(0, ${y * 0.35}px, 0) scale(${1 + y * 0.0004})`;
           layerImg.current.style.filter = `blur(${Math.min(y * 0.012, 6)}px) brightness(${1 - Math.min(y * 0.0008, 0.5)})`;
         }
-        if (layerPortrait.current) {
-          // counter-parallax: rises slightly slower, mouse-independent depth
-          layerPortrait.current.style.transform = `translate3d(0, ${y * -0.12}px, 0) scale(${1 + y * 0.0002})`;
-          layerPortrait.current.style.filter = `brightness(${1 - Math.min(y * 0.0006, 0.4)})`;
+        if (layerBrain.current) {
+          layerBrain.current.style.transform = `translate3d(0, ${y * -0.18}px, 0) scale(${1 + y * 0.0003})`;
+          layerBrain.current.style.filter = `brightness(${1 - Math.min(y * 0.0005, 0.35)})`;
         }
         if (layerStreaks.current) {
           layerStreaks.current.style.transform = `translate3d(0, ${y * 0.18}px, 0)`;
@@ -40,22 +40,26 @@ export function Hero() {
     return () => { cancelAnimationFrame(raf); window.removeEventListener("scroll", onScroll); };
   }, []);
 
-  // 3D mouse tilt on headline
+  // 3D mouse tilt — text + brain (opposite directions for depth)
   useEffect(() => {
-    const el = tiltRef.current;
-    if (!el) return;
     let raf = 0;
     let tx = 0, ty = 0, cx = 0, cy = 0;
     const onMove = (e: MouseEvent) => {
       const px = e.clientX / window.innerWidth - 0.5;
       const py = e.clientY / window.innerHeight - 0.5;
-      tx = -py * 6;
-      ty = px * 6;
+      tx = -py * 8;
+      ty = px * 10;
     };
     const tick = () => {
       cx += (tx - cx) * 0.06;
       cy += (ty - cy) * 0.06;
-      el.style.transform = `perspective(1400px) rotateX(${cx}deg) rotateY(${cy}deg)`;
+      if (tiltRef.current) {
+        tiltRef.current.style.transform = `perspective(1400px) rotateX(${cx}deg) rotateY(${cy}deg)`;
+      }
+      if (brainTiltRef.current) {
+        // brain tilts opposite direction + slight translate for parallax depth
+        brainTiltRef.current.style.transform = `perspective(1600px) rotateX(${-cx * 1.6}deg) rotateY(${-cy * 1.8}deg) translate3d(${cy * 6}px, ${cx * -6}px, 0)`;
+      }
       raf = requestAnimationFrame(tick);
     };
     window.addEventListener("mousemove", onMove);
@@ -68,18 +72,20 @@ export function Hero() {
       {/* Layer 1 — atmospheric base backdrop with parallax + slow zoom */}
       <div ref={layerImg} className="absolute inset-0 will-change-transform">
         <img
-          src={heroBackdrop}
+          src={heroBg}
           alt=""
           width={1920}
-          height={1280}
-          className="h-[120%] w-full object-cover opacity-50"
+          height={1088}
+          className="h-[120%] w-full object-cover opacity-70"
           style={{ animation: "shimmer 18s ease-in-out infinite" }}
         />
+        {/* darkening veil to lift text contrast */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(120deg, oklch(0.05 0.005 60 / 0.85) 0%, oklch(0.05 0.005 60 / 0.55) 45%, oklch(0.05 0.005 60 / 0.2) 100%)" }} />
       </div>
 
       {/* Layer 2 — flowing cinematic canvas, blended */}
-      <div className="absolute inset-0 mix-blend-screen opacity-90">
-        <CinematicCanvas hue="mixed" intensity={1.2} />
+      <div className="absolute inset-0 mix-blend-screen opacity-80">
+        <CinematicCanvas hue="mixed" intensity={1.1} />
       </div>
 
       {/* Layer 3 — light streaks (mid parallax) */}
@@ -89,28 +95,31 @@ export function Hero() {
         <div className="absolute left-1/2 top-1/4 h-[60%] w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
       </div>
 
-      {/* Layer 4 — hero portrait (woman + golden neural network), counter-parallax */}
+      {/* Layer 4 — floating 3D brain (counter-parallax + mouse tilt + float) */}
       <div
-        ref={layerPortrait}
-        className="pointer-events-none absolute inset-y-0 right-0 z-[5] flex w-full items-center justify-end will-change-transform md:w-[62%]"
+        ref={layerBrain}
+        className="pointer-events-none absolute inset-y-0 right-0 z-[5] hidden w-[58%] items-center justify-center will-change-transform md:flex"
       >
-        <div className="relative h-full w-full">
-          <img
-            src={heroImg}
-            alt="Luminous portrait — golden neural network unfolding from the mind"
-            width={1024}
-            height={1024}
-            className="absolute inset-0 h-full w-full object-cover object-right md:object-center"
-            style={{ animation: "shimmer 22s ease-in-out infinite" }}
-          />
-          {/* feathered edge into background */}
-          <div className="absolute inset-0"
-               style={{ background: "linear-gradient(to right, oklch(0.05 0.005 60) 0%, oklch(0.05 0.005 60 / 0.85) 18%, transparent 55%)" }} />
-          <div className="absolute inset-0"
-               style={{ background: "linear-gradient(to bottom, transparent 60%, oklch(0.05 0.005 60) 100%)" }} />
-          {/* gold halo */}
-          <div className="absolute right-[8%] top-[30%] h-[42%] w-[42%] rounded-full opacity-70 blur-3xl"
+        <div
+          ref={brainTiltRef}
+          className="relative h-[78%] w-[78%] will-change-transform"
+          style={{ transformStyle: "preserve-3d", transition: "transform 0.4s cubic-bezier(0.16,1,0.3,1)" }}
+        >
+          <div className="animate-float-slow h-full w-full">
+            <img
+              src={brain3d}
+              alt="Luminous golden 3D neural brain"
+              width={1024}
+              height={1024}
+              className="h-full w-full object-contain drop-shadow-[0_0_80px_oklch(0.78_0.16_60/0.45)]"
+            />
+          </div>
+          {/* gold halo behind */}
+          <div className="absolute inset-0 -z-10 rounded-full opacity-80 blur-3xl"
                style={{ background: "radial-gradient(closest-side, oklch(0.78 0.16 60 / 0.45), transparent 70%)" }} />
+          {/* orbiting ring */}
+          <div className="absolute inset-[10%] rounded-full border border-gold/20 animate-spin-slow" />
+          <div className="absolute inset-[22%] rounded-full border border-gold/10 animate-spin-slow-reverse" />
         </div>
       </div>
 
