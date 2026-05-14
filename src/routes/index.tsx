@@ -6,6 +6,7 @@ import { PillarSection } from "@/components/PillarSection";
 import { VideoShowcase } from "@/components/VideoShowcase";
 import { Waitlist } from "@/components/Waitlist";
 import { Footer } from "@/components/Footer";
+import { ScrollChapters } from "@/components/ScrollChapters";
 import { useRevealOnScroll } from "@/hooks/use-reveal";
 
 import neuroImg from "@/assets/section-neuro.jpg";
@@ -42,6 +43,8 @@ function Index() {
         <main>
           <Hero />
 
+          <ScrollChapters />
+
           <PillarSection
             id="neuro"
             index="01 / Neuroscience"
@@ -56,6 +59,7 @@ function Index() {
             ]}
             image={neuroImg}
             imageAlt="Glowing golden neural network"
+            hue="gold"
           />
 
           <PillarSection
