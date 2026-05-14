@@ -1,4 +1,7 @@
 import { useEffect, useRef } from "react";
+import bgNeural from "@/assets/hero-neuro-woman.png";
+import bgSound from "@/assets/section-music.jpg";
+import bgWellness from "@/assets/section-wellness.jpg";
 
 /**
  * Cinematic atmospheric backdrop:
@@ -9,6 +12,28 @@ import { useEffect, useRef } from "react";
 export function AmbientBackdrop() {
   const glowRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const parallaxRef = useRef<HTMLDivElement>(null);
+
+  // Scroll parallax for themed background images
+  useEffect(() => {
+    let raf = 0;
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        const el = parallaxRef.current;
+        if (!el) return;
+        const layers = el.querySelectorAll<HTMLElement>("[data-depth]");
+        layers.forEach((l) => {
+          const d = parseFloat(l.dataset.depth || "0");
+          l.style.transform = `translate3d(0, ${y * d}px, 0)`;
+        });
+      });
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => { cancelAnimationFrame(raf); window.removeEventListener("scroll", onScroll); };
+  }, []);
 
   // Mouse-reactive lighting
   useEffect(() => {
@@ -101,6 +126,20 @@ export function AmbientBackdrop() {
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
       {/* deep base */}
       <div className="absolute inset-0 bg-[var(--color-ink)]" />
+
+      {/* themed parallax image stack — drifts on scroll */}
+      <div ref={parallaxRef} className="absolute inset-0">
+        <div data-depth="-0.15" className="absolute -left-[10%] top-[10vh] h-[70vh] w-[55vw] opacity-[0.18] will-change-transform">
+          <img src={bgNeural} alt="" className="h-full w-full object-cover" style={{ maskImage: "radial-gradient(closest-side, black 30%, transparent 75%)", WebkitMaskImage: "radial-gradient(closest-side, black 30%, transparent 75%)" }} />
+        </div>
+        <div data-depth="-0.08" className="absolute right-[-8%] top-[110vh] h-[80vh] w-[60vw] opacity-[0.16] will-change-transform">
+          <img src={bgSound} alt="" className="h-full w-full object-cover" style={{ maskImage: "radial-gradient(closest-side, black 25%, transparent 75%)", WebkitMaskImage: "radial-gradient(closest-side, black 25%, transparent 75%)" }} />
+        </div>
+        <div data-depth="-0.12" className="absolute left-[-5%] top-[230vh] h-[80vh] w-[60vw] opacity-[0.15] will-change-transform">
+          <img src={bgWellness} alt="" className="h-full w-full object-cover" style={{ maskImage: "radial-gradient(closest-side, black 25%, transparent 75%)", WebkitMaskImage: "radial-gradient(closest-side, black 25%, transparent 75%)" }} />
+        </div>
+      </div>
+
       {/* slow rotating ambient gold blob */}
       <div className="absolute -top-1/3 left-1/2 h-[120vh] w-[120vh] -translate-x-1/2 rounded-full opacity-50 animate-pulse-glow"
            style={{ background: "radial-gradient(closest-side, oklch(0.74 0.16 55 / 0.35), transparent 70%)" }} />
