@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import heroBg from "@/assets/hero-brain.jpg";
 import brain3d from "@/assets/neuro-brain-3d.png";
+import brainLoop from "@/assets/neuro-brain-loop.mp4";
 import { CinematicCanvas } from "@/components/CinematicCanvas";
 
 export function Hero() {
@@ -106,12 +107,15 @@ export function Hero() {
           style={{ transformStyle: "preserve-3d", transition: "transform 0.4s cubic-bezier(0.16,1,0.3,1)" }}
         >
           <div className="animate-float-slow h-full w-full">
-            <img
-              src={brain3d}
-              alt="Luminous golden 3D neural brain"
-              width={1024}
-              height={1024}
-              className="h-full w-full object-contain drop-shadow-[0_0_80px_oklch(0.78_0.16_60/0.45)]"
+            <video
+              src={brainLoop}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              poster={brain3d}
+              className="h-full w-full object-contain drop-shadow-[0_0_80px_oklch(0.78_0.16_60/0.5)] mix-blend-screen"
             />
           </div>
           {/* gold halo behind */}
