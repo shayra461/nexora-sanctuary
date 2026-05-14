@@ -1,5 +1,11 @@
 import { useScrollProgress } from "@/hooks/use-scroll-parallax";
 import { CinematicCanvas } from "@/components/CinematicCanvas";
+import { useEffect, useRef } from "react";
+
+import imgMystery from "@/assets/neuro-synapse.jpg";
+import imgCalmness from "@/assets/neuro-waves.jpg";
+import imgElevation from "@/assets/hero-brain.jpg";
+import imgTransformation from "@/assets/neuro-brain-3d.png";
 
 const chapters = [
   {
@@ -7,24 +13,32 @@ const chapters = [
     title: "Mystery",
     body: "Step into a stillness you'd forgotten was possible.",
     hue: "teal" as const,
+    image: imgMystery,
+    contain: false,
   },
   {
     eyebrow: "Chapter II",
     title: "Calmness",
     body: "Let the nervous system soften into the design of the room.",
     hue: "amber" as const,
+    image: imgCalmness,
+    contain: false,
   },
   {
     eyebrow: "Chapter III",
     title: "Elevation",
     body: "Frequencies meet attention — coherence rises through the body.",
     hue: "gold" as const,
+    image: imgElevation,
+    contain: false,
   },
   {
     eyebrow: "Chapter IV",
     title: "Transformation",
     body: "The architecture of the mind quietly rearranges itself.",
     hue: "mixed" as const,
+    image: imgTransformation,
+    contain: true,
   },
 ];
 
@@ -32,6 +46,36 @@ export function ScrollChapters() {
   const { ref, progress } = useScrollProgress<HTMLElement>();
   const idx = Math.min(chapters.length - 1, Math.floor(progress * chapters.length * 0.999));
   const localProgress = (progress * chapters.length) % 1;
+
+  // Mouse 3D tilt
+  const stageRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    let raf = 0;
+    let tx = 0, ty = 0, cx = 0, cy = 0;
+    const onMove = (e: MouseEvent) => {
+      tx = -(e.clientY / window.innerHeight - 0.5) * 10;
+      ty = (e.clientX / window.innerWidth - 0.5) * 14;
+    };
+    const tick = () => {
+      cx += (tx - cx) * 0.05;
+      cy += (ty - cy) * 0.05;
+      if (stageRef.current) {
+        stageRef.current.style.setProperty("--rx", `${cx}deg`);
+        stageRef.current.style.setProperty("--ry", `${cy}deg`);
+        stageRef.current.style.setProperty("--mx", `${cy * 8}px`);
+        stageRef.current.style.setProperty("--my", `${cx * -8}px`);
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    window.addEventListener("mousemove", onMove);
+    raf = requestAnimationFrame(tick);
+    return () => { cancelAnimationFrame(raf); window.removeEventListener("mousemove", onMove); };
+  }, []);
+
+  // local depth from chapter progress
+  const depthY = (localProgress - 0.5) * 80;
+  const depthScale = 1.05 + localProgress * 0.08;
+  const fgY = (localProgress - 0.5) * -140;
 
   return (
     <section
@@ -41,25 +85,67 @@ export function ScrollChapters() {
       style={{ height: `${chapters.length * 100}vh` }}
       aria-label="Cinematic chapters"
     >
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-        {/* Animated environment per chapter */}
-        {chapters.map((c, i) => (
-          <div
-            key={c.title}
-            aria-hidden
-            className="absolute inset-0 transition-opacity duration-[1200ms] ease-out"
-            style={{ opacity: i === idx ? 1 : 0 }}
-          >
-            <CinematicCanvas hue={c.hue} intensity={1.4} />
-          </div>
-        ))}
+      <div
+        ref={stageRef}
+        className="sticky top-0 flex h-screen items-center overflow-hidden"
+        style={{ perspective: "1600px" }}
+      >
+        {/* Animated environments per chapter — image + canvas layers */}
+        {chapters.map((c, i) => {
+          const active = i === idx;
+          return (
+            <div
+              key={c.title}
+              aria-hidden
+              className="absolute inset-0 transition-opacity duration-[1400ms] ease-out"
+              style={{ opacity: active ? 1 : 0 }}
+            >
+              {/* Deep background image with 3D tilt + parallax zoom */}
+              <div
+                className="absolute inset-0 will-change-transform"
+                style={{
+                  transform: active
+                    ? `translate3d(var(--mx,0), calc(var(--my,0px) + ${depthY}px), 0) scale(${depthScale}) rotateX(var(--rx,0)) rotateY(var(--ry,0))`
+                    : "scale(1.15)",
+                  transformStyle: "preserve-3d",
+                  transition: "transform 0.4s cubic-bezier(0.16,1,0.3,1)",
+                }}
+              >
+                <img
+                  src={c.image}
+                  alt=""
+                  loading="lazy"
+                  className={`h-full w-full ${c.contain ? "object-contain" : "object-cover"} opacity-${c.contain ? "70" : "55"}`}
+                />
+                {/* image atmosphere veil */}
+                <div className="absolute inset-0" style={{ background: "radial-gradient(70% 70% at 50% 50%, transparent 30%, oklch(0.05 0.005 60 / 0.85) 90%)" }} />
+              </div>
 
-        {/* Veil */}
-        <div className="absolute inset-0"
-             style={{ background: "radial-gradient(60% 60% at 50% 50%, transparent 30%, oklch(0.05 0.005 60 / 0.9))" }} />
+              {/* Mid layer — flowing canvas */}
+              <div className="absolute inset-0 mix-blend-screen opacity-90">
+                <CinematicCanvas hue={c.hue} intensity={1.5} />
+              </div>
+
+              {/* Foreground floating particles / streaks (counter-parallax) */}
+              <div
+                className="pointer-events-none absolute inset-0 will-change-transform"
+                style={{ transform: active ? `translate3d(0, ${fgY}px, 0)` : "translate3d(0,0,0)" }}
+              >
+                <div className="absolute left-[-10%] top-[28%] h-px w-[55%] origin-left rotate-[5deg] bg-gradient-to-r from-transparent via-gold/60 to-transparent blur-[1px]" />
+                <div className="absolute right-[-10%] top-[68%] h-px w-[55%] origin-right -rotate-[7deg] bg-gradient-to-r from-transparent via-amber-glow/60 to-transparent blur-[1px]" />
+                <div className="absolute left-[12%] top-[18%] h-2 w-2 rounded-full bg-gold/80 shadow-[0_0_24px_var(--color-gold)] animate-float-slow" />
+                <div className="absolute right-[18%] top-[72%] h-1.5 w-1.5 rounded-full bg-teal-neural/80 shadow-[0_0_18px_var(--color-teal-neural)] animate-float-slow" style={{ animationDelay: "1.4s" }} />
+              </div>
+            </div>
+          );
+        })}
+
+        {/* Vignette */}
+        <div className="pointer-events-none absolute inset-0"
+             style={{ background: "radial-gradient(60% 60% at 50% 50%, transparent 30%, oklch(0.05 0.005 60 / 0.85))" }} />
 
         {/* Progress rail */}
-        <div className="absolute left-8 top-1/2 hidden -translate-y-1/2 flex-col gap-6 md:flex">
+        <div className="absolute left-8 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-6 md:flex">
           {chapters.map((c, i) => (
             <div key={c.title} className="flex items-center gap-3">
               <span className={`h-px transition-all duration-700 ${i === idx ? "w-12 bg-gold" : "w-6 bg-gold/30"}`} />
@@ -71,23 +157,31 @@ export function ScrollChapters() {
         </div>
 
         {/* Active chapter content */}
-        <div className="relative z-10 mx-auto w-full max-w-4xl px-6 text-center md:px-10">
+        <div
+          className="relative z-10 mx-auto w-full max-w-4xl px-6 text-center md:px-10"
+          style={{ transform: "translate3d(0,0,0)" }}
+        >
           {chapters.map((c, i) => {
             const active = i === idx;
             return (
               <div
                 key={c.title}
-                className="absolute inset-x-0 transition-all duration-[1100ms]"
+                className="absolute inset-x-0 will-change-transform"
                 style={{
                   opacity: active ? 1 : 0,
                   transform: active
-                    ? `translateY(${(localProgress - 0.5) * 30}px) scale(${1 + localProgress * 0.02})`
-                    : "translateY(60px) scale(0.96)",
-                  filter: active ? "blur(0)" : "blur(12px)",
+                    ? `perspective(1400px) rotateX(calc(var(--rx,0) * -0.4)) rotateY(calc(var(--ry,0) * -0.4)) translateY(${(localProgress - 0.5) * 30}px) scale(${1 + localProgress * 0.02})`
+                    : "perspective(1400px) translateY(60px) scale(0.96)",
+                  filter: active ? "blur(0)" : "blur(14px)",
+                  transition: "opacity 1100ms ease-out, filter 1100ms ease-out",
+                  transformStyle: "preserve-3d",
                 }}
               >
                 <div className="eyebrow justify-center">{c.eyebrow}</div>
-                <h3 className="font-display mt-8 text-[clamp(3rem,10vw,9rem)] leading-[0.95] tracking-tight">
+                <h3
+                  className="font-display mt-8 text-[clamp(3rem,11vw,10rem)] leading-[0.95] tracking-tight"
+                  style={{ textShadow: "0 0 80px oklch(0.78 0.16 60 / 0.35)" }}
+                >
                   <span className="italic text-gold-gradient">{c.title}</span>
                 </h3>
                 <p className="mx-auto mt-10 max-w-xl text-base text-muted-foreground md:text-lg">
