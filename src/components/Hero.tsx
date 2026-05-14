@@ -1,16 +1,14 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import heroImg from "@/assets/hero-neuro-woman.png";
+import heroBackdrop from "@/assets/hero-nexora.jpg";
 import { CinematicCanvas } from "@/components/CinematicCanvas";
-import { NeuralSphere3D } from "@/components/NeuralSphere3D";
 
 export function Hero() {
-  const layerSphere = useRef<HTMLDivElement>(null);
-  const layerStreaks = useRef<HTMLDivElement>(null);
+  const layerImg = useRef<HTMLDivElement>(null);
+  const layerPortrait = useRef<HTMLDivElement>(null);
   const layerText = useRef<HTMLDivElement>(null);
-  const layerOrbits = useRef<HTMLDivElement>(null);
+  const layerStreaks = useRef<HTMLDivElement>(null);
   const tiltRef = useRef<HTMLDivElement>(null);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
 
   // Scroll parallax
   useEffect(() => {
@@ -19,15 +17,17 @@ export function Hero() {
       cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
         const y = window.scrollY;
-        if (layerSphere.current) {
-          layerSphere.current.style.transform = `translate3d(0, ${y * 0.25}px, 0) scale(${1 + y * 0.0006})`;
-          layerSphere.current.style.opacity = `${Math.max(0, 1 - y / 900)}`;
+        if (layerImg.current) {
+          layerImg.current.style.transform = `translate3d(0, ${y * 0.35}px, 0) scale(${1 + y * 0.0004})`;
+          layerImg.current.style.filter = `blur(${Math.min(y * 0.012, 6)}px) brightness(${1 - Math.min(y * 0.0008, 0.5)})`;
         }
-        if (layerOrbits.current) {
-          layerOrbits.current.style.transform = `translate3d(0, ${y * 0.15}px, 0) rotate(${y * 0.02}deg)`;
+        if (layerPortrait.current) {
+          // counter-parallax: rises slightly slower, mouse-independent depth
+          layerPortrait.current.style.transform = `translate3d(0, ${y * -0.12}px, 0) scale(${1 + y * 0.0002})`;
+          layerPortrait.current.style.filter = `brightness(${1 - Math.min(y * 0.0006, 0.4)})`;
         }
         if (layerStreaks.current) {
-          layerStreaks.current.style.transform = `translate3d(0, ${y * 0.4}px, 0)`;
+          layerStreaks.current.style.transform = `translate3d(0, ${y * 0.18}px, 0)`;
         }
         if (layerText.current) {
           layerText.current.style.transform = `translate3d(0, ${y * 0.55}px, 0)`;
@@ -49,8 +49,8 @@ export function Hero() {
     const onMove = (e: MouseEvent) => {
       const px = e.clientX / window.innerWidth - 0.5;
       const py = e.clientY / window.innerHeight - 0.5;
-      tx = -py * 5;
-      ty = px * 5;
+      tx = -py * 6;
+      ty = px * 6;
     };
     const tick = () => {
       cx += (tx - cx) * 0.06;
@@ -65,90 +65,89 @@ export function Hero() {
 
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Layer 1 — flowing cinematic canvas */}
-      <div className="absolute inset-0 opacity-80">
-        <CinematicCanvas hue="mixed" intensity={1.1} />
+      {/* Layer 1 — atmospheric base backdrop with parallax + slow zoom */}
+      <div ref={layerImg} className="absolute inset-0 will-change-transform">
+        <img
+          src={heroBackdrop}
+          alt=""
+          width={1920}
+          height={1280}
+          className="h-[120%] w-full object-cover opacity-50"
+          style={{ animation: "shimmer 18s ease-in-out infinite" }}
+        />
       </div>
 
-      {/* Layer 2 — orbital rings, slowly rotating */}
-      <div ref={layerOrbits} aria-hidden className="pointer-events-none absolute inset-0 z-[2] flex items-center justify-center will-change-transform">
-        <div className="relative h-[110vh] w-[110vh] max-h-[1100px] max-w-[1100px]">
-          <div className="absolute inset-0 rounded-full border border-gold/15 animate-[spin_60s_linear_infinite]" />
-          <div className="absolute inset-[8%] rounded-full border border-amber-glow/10 animate-[spin_90s_linear_infinite_reverse]" />
-          <div className="absolute inset-[18%] rounded-full border border-teal-neural/15 animate-[spin_120s_linear_infinite]" />
-          <div className="absolute inset-[28%] rounded-full border border-gold/10" />
-        </div>
+      {/* Layer 2 — flowing cinematic canvas, blended */}
+      <div className="absolute inset-0 mix-blend-screen opacity-90">
+        <CinematicCanvas hue="mixed" intensity={1.2} />
       </div>
 
-      {/* Layer 3 — 3D neural sphere (centerpiece) */}
-      <div
-        ref={layerSphere}
-        className="absolute inset-0 z-[3] flex items-center justify-center will-change-transform"
-      >
-        <div className="relative aspect-square h-[95vh] max-h-[1000px]">
-          {/* radial halo */}
-          <div className="absolute inset-0 rounded-full opacity-70 blur-3xl"
-               style={{ background: "radial-gradient(closest-side, oklch(0.78 0.16 60 / 0.4), transparent 70%)" }} />
-          {mounted && <NeuralSphere3D />}
-        </div>
-      </div>
-
-      {/* Layer 4 — light streaks (front parallax) */}
-      <div ref={layerStreaks} aria-hidden className="pointer-events-none absolute inset-0 z-[4] will-change-transform">
+      {/* Layer 3 — light streaks (mid parallax) */}
+      <div ref={layerStreaks} aria-hidden className="pointer-events-none absolute inset-0 will-change-transform">
         <div className="absolute left-[-15%] top-1/3 h-px w-[60%] origin-left rotate-[8deg] bg-gradient-to-r from-transparent via-gold/70 to-transparent blur-[1px]" />
         <div className="absolute right-[-15%] top-2/3 h-px w-[55%] origin-right -rotate-[6deg] bg-gradient-to-r from-transparent via-amber-glow/60 to-transparent blur-[1px]" />
+        <div className="absolute left-1/2 top-1/4 h-[60%] w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-gold/30 to-transparent" />
       </div>
 
-      {/* Cinematic veils that frame the sphere and ground the text */}
-      <div className="absolute inset-0 z-[5]"
-           style={{ background: "radial-gradient(70% 80% at 50% 50%, transparent 30%, oklch(0.05 0.005 60 / 0.55) 70%, oklch(0.05 0.005 60 / 0.92) 100%)" }} />
-      <div className="absolute inset-x-0 bottom-0 z-[5] h-[40%]"
-           style={{ background: "linear-gradient(to bottom, transparent, oklch(0.05 0.005 60))" }} />
+      {/* Layer 4 — hero portrait (woman + golden neural network), counter-parallax */}
+      <div
+        ref={layerPortrait}
+        className="pointer-events-none absolute inset-y-0 right-0 z-[5] flex w-full items-center justify-end will-change-transform md:w-[62%]"
+      >
+        <div className="relative h-full w-full">
+          <img
+            src={heroImg}
+            alt="Luminous portrait — golden neural network unfolding from the mind"
+            width={1024}
+            height={1024}
+            className="absolute inset-0 h-full w-full object-cover object-right md:object-center"
+            style={{ animation: "shimmer 22s ease-in-out infinite" }}
+          />
+          {/* feathered edge into background */}
+          <div className="absolute inset-0"
+               style={{ background: "linear-gradient(to right, oklch(0.05 0.005 60) 0%, oklch(0.05 0.005 60 / 0.85) 18%, transparent 55%)" }} />
+          <div className="absolute inset-0"
+               style={{ background: "linear-gradient(to bottom, transparent 60%, oklch(0.05 0.005 60) 100%)" }} />
+          {/* gold halo */}
+          <div className="absolute right-[8%] top-[30%] h-[42%] w-[42%] rounded-full opacity-70 blur-3xl"
+               style={{ background: "radial-gradient(closest-side, oklch(0.78 0.16 60 / 0.45), transparent 70%)" }} />
+        </div>
+      </div>
 
-      {/* Foreground content — centered cinematic copy */}
-      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-32 text-center md:px-10">
-        <div ref={layerText} className="will-change-transform" style={{ transformStyle: "preserve-3d" }}>
-          <div className="eyebrow mx-auto inline-flex items-center gap-3 animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            <span className="h-px w-10 bg-gold/60" />
+      {/* Veils */}
+      <div className="absolute inset-0" style={{ background: "var(--gradient-veil)" }} />
+      <div className="absolute inset-0"
+           style={{ background: "radial-gradient(60% 70% at 30% 50%, transparent 25%, oklch(0.05 0.005 60 / 0.7) 90%)" }} />
+
+      {/* Foreground content */}
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 md:px-10">
+        <div ref={layerText} className="will-change-transform md:max-w-[58%]" style={{ transformStyle: "preserve-3d" }}>
+          <div className="eyebrow animate-fade-up" style={{ animationDelay: "0.2s" }}>
             A New Era of Neuro Wellness
-            <span className="h-px w-10 bg-gold/60" />
           </div>
 
           <div ref={tiltRef} className="will-change-transform">
             <h1
-              className="font-display mt-8 text-[clamp(2.8rem,8.5vw,8.5rem)] leading-[0.98] tracking-tight text-foreground animate-fade-up"
-              style={{ animationDelay: "0.35s" }}
+              className="font-display mt-8 text-[clamp(2.6rem,7.5vw,7.5rem)] leading-[1.02] tracking-tight text-foreground animate-fade-up"
+              style={{ animationDelay: "0.4s" }}
             >
-              Awaken the <span className="text-gold-gradient italic">Architecture</span> <br className="hidden md:block" />
-              of the Mind.
+              The Premier <br />
+              <span className="text-gold-gradient italic">Neuro Wellness</span> <br />
+              Experience.
             </h1>
           </div>
 
           <p
-            className="mx-auto mt-10 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
-            style={{ animationDelay: "0.65s" }}
+            className="mt-10 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
+            style={{ animationDelay: "0.7s" }}
           >
-            A cinematic sanctuary where neuroscience, sound, and intentional
-            transformation converge — engineered for the elevated mind.
+            Where neuroscience, sound, and intentional transformation come together
+            to elevate the mind, body, and human experience.
           </p>
 
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-4 animate-fade-up" style={{ animationDelay: "0.9s" }}>
+          <div className="mt-12 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: "0.95s" }}>
             <a href="#waitlist" className="btn-gold">Join The Experience<span aria-hidden>→</span></a>
             <a href="#chapters" className="btn-ghost-gold">Explore The Ecosystem</a>
-          </div>
-
-          {/* glass stat row */}
-          <div className="mx-auto mt-20 grid max-w-3xl grid-cols-3 gap-4 animate-fade-up" style={{ animationDelay: "1.15s" }}>
-            {[
-              { k: "5", l: "Pillars" },
-              { k: "∞", l: "States" },
-              { k: "01", l: "Sanctuary" },
-            ].map((s) => (
-              <div key={s.l} className="rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-5 backdrop-blur-md">
-                <div className="font-display text-3xl text-gold-gradient">{s.k}</div>
-                <div className="mt-1 text-[0.6rem] uppercase tracking-[0.4em] text-muted-foreground">{s.l}</div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
