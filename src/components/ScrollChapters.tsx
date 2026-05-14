@@ -90,59 +90,48 @@ export function ScrollChapters() {
         className="sticky top-0 flex h-screen items-center overflow-hidden"
         style={{ perspective: "1600px" }}
       >
-        {/* Animated environments per chapter — image + canvas layers */}
+        {/* Animated environments per chapter — image only (lightweight) */}
         {chapters.map((c, i) => {
           const active = i === idx;
           return (
             <div
               key={c.title}
               aria-hidden
-              className="absolute inset-0 transition-opacity duration-[1400ms] ease-out"
+              className="absolute inset-0 transition-opacity duration-[1200ms] ease-out"
               style={{ opacity: active ? 1 : 0 }}
             >
-              {/* Deep background image with 3D tilt + parallax zoom */}
               <div
                 className="absolute inset-0 will-change-transform"
                 style={{
                   transform: active
                     ? `translate3d(var(--mx,0), calc(var(--my,0px) + ${depthY}px), 0) scale(${depthScale}) rotateX(var(--rx,0)) rotateY(var(--ry,0))`
-                    : "scale(1.15)",
+                    : "scale(1.1)",
                   transformStyle: "preserve-3d",
-                  transition: "transform 0.4s cubic-bezier(0.16,1,0.3,1)",
+                  transition: "transform 0.5s cubic-bezier(0.16,1,0.3,1)",
                 }}
               >
                 <img
                   src={c.image}
                   alt=""
-                  loading="lazy"
-                  className={`h-full w-full ${c.contain ? "object-contain" : "object-cover"} opacity-${c.contain ? "70" : "55"}`}
+                  loading={active ? "eager" : "lazy"}
+                  className={`h-full w-full ${c.contain ? "object-contain opacity-60" : "object-cover opacity-45"}`}
                 />
-                {/* image atmosphere veil */}
-                <div className="absolute inset-0" style={{ background: "radial-gradient(70% 70% at 50% 50%, transparent 30%, oklch(0.05 0.005 60 / 0.85) 90%)" }} />
-              </div>
-
-              {/* Mid layer — flowing canvas */}
-              <div className="absolute inset-0 mix-blend-screen opacity-90">
-                <CinematicCanvas hue={c.hue} intensity={1.5} />
-              </div>
-
-              {/* Foreground floating particles / streaks (counter-parallax) */}
-              <div
-                className="pointer-events-none absolute inset-0 will-change-transform"
-                style={{ transform: active ? `translate3d(0, ${fgY}px, 0)` : "translate3d(0,0,0)" }}
-              >
-                <div className="absolute left-[-10%] top-[28%] h-px w-[55%] origin-left rotate-[5deg] bg-gradient-to-r from-transparent via-gold/60 to-transparent blur-[1px]" />
-                <div className="absolute right-[-10%] top-[68%] h-px w-[55%] origin-right -rotate-[7deg] bg-gradient-to-r from-transparent via-amber-glow/60 to-transparent blur-[1px]" />
-                <div className="absolute left-[12%] top-[18%] h-2 w-2 rounded-full bg-gold/80 shadow-[0_0_24px_var(--color-gold)] animate-float-slow" />
-                <div className="absolute right-[18%] top-[72%] h-1.5 w-1.5 rounded-full bg-teal-neural/80 shadow-[0_0_18px_var(--color-teal-neural)] animate-float-slow" style={{ animationDelay: "1.4s" }} />
               </div>
             </div>
           );
         })}
 
-        {/* Vignette */}
+        {/* Single shared canvas — only for the active chapter (perf) */}
+        <div className="absolute inset-0 mix-blend-screen opacity-70 pointer-events-none">
+          <CinematicCanvas hue={chapters[idx].hue} intensity={1.1} />
+        </div>
+
+        {/* Strong vignette + darken so text is legible */}
         <div className="pointer-events-none absolute inset-0"
-             style={{ background: "radial-gradient(60% 60% at 50% 50%, transparent 30%, oklch(0.05 0.005 60 / 0.85))" }} />
+             style={{ background: "radial-gradient(70% 70% at 50% 55%, oklch(0.05 0.005 60 / 0.55) 0%, oklch(0.04 0.005 60 / 0.92) 80%)" }} />
+        {/* Center dark ellipse behind text for guaranteed contrast */}
+        <div className="pointer-events-none absolute inset-0"
+             style={{ background: "radial-gradient(40% 30% at 50% 60%, oklch(0.03 0.005 60 / 0.75), transparent 70%)" }} />
 
         {/* Progress rail */}
         <div className="absolute left-8 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-6 md:flex">
