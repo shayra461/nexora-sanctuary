@@ -6,6 +6,7 @@ import { PillarSection } from "@/components/PillarSection";
 import { VideoShowcase } from "@/components/VideoShowcase";
 import { Waitlist } from "@/components/Waitlist";
 import { Footer } from "@/components/Footer";
+import { ScrollChapters } from "@/components/ScrollChapters";
 import { useRevealOnScroll } from "@/hooks/use-reveal";
 
 import neuroImg from "@/assets/section-neuro.jpg";
@@ -42,6 +43,8 @@ function Index() {
         <main>
           <Hero />
 
+          <ScrollChapters />
+
           <PillarSection
             id="neuro"
             index="01 / Neuroscience"
@@ -56,6 +59,7 @@ function Index() {
             ]}
             image={neuroImg}
             imageAlt="Glowing golden neural network"
+            hue="gold"
           />
 
           <PillarSection
@@ -73,6 +77,7 @@ function Index() {
             image={musicImg}
             imageAlt="Cinematic sound wave in gold light"
             reverse
+            hue="amber"
           />
 
           <VideoShowcase />
@@ -91,6 +96,7 @@ function Index() {
             ]}
             image={wellnessImg}
             imageAlt="Silhouette in golden light"
+            hue="teal"
           />
 
           <PillarSection
@@ -108,6 +114,7 @@ function Index() {
             image={programsImg}
             imageAlt="Architectural sanctuary lit in gold"
             reverse
+            hue="amber"
           />
 
           <PillarSection
@@ -124,6 +131,7 @@ function Index() {
             ]}
             image={communityImg}
             imageAlt="Constellation of golden nodes"
+            hue="teal"
           />
 
           <Waitlist />
