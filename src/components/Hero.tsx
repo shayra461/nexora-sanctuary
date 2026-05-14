@@ -21,6 +21,11 @@ export function Hero() {
           layerImg.current.style.transform = `translate3d(0, ${y * 0.35}px, 0) scale(${1 + y * 0.0004})`;
           layerImg.current.style.filter = `blur(${Math.min(y * 0.012, 6)}px) brightness(${1 - Math.min(y * 0.0008, 0.5)})`;
         }
+        if (layerPortrait.current) {
+          // counter-parallax: rises slightly slower, mouse-independent depth
+          layerPortrait.current.style.transform = `translate3d(0, ${y * -0.12}px, 0) scale(${1 + y * 0.0002})`;
+          layerPortrait.current.style.filter = `brightness(${1 - Math.min(y * 0.0006, 0.4)})`;
+        }
         if (layerStreaks.current) {
           layerStreaks.current.style.transform = `translate3d(0, ${y * 0.18}px, 0)`;
         }
