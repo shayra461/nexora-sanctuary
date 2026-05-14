@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
-import heroImg from "@/assets/hero-nexora.jpg";
+import heroImg from "@/assets/hero-neuro-woman.png";
+import heroBackdrop from "@/assets/hero-nexora.jpg";
 import { CinematicCanvas } from "@/components/CinematicCanvas";
 
 export function Hero() {
