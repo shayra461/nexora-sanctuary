@@ -5,11 +5,12 @@ export function VideoShowcase() {
     <section className="relative py-32 md:py-44">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mx-auto max-w-2xl text-center">
-          <div className="eyebrow justify-center">A Cinematic Glimpse</div>
+          <div className="eyebrow justify-center">The Experience</div>
           <h2 className="font-display mt-6 text-[clamp(2rem,5vw,4.2rem)] leading-[1.05]">
-            An invitation to <span className="italic text-gold-gradient">stillness</span> in motion.
+            Stillness, in <span className="italic text-gold-gradient">motion.</span>
           </h2>
         </div>
+
 
         <div className="reveal group relative mt-20 overflow-hidden rounded-3xl border border-gold/20"
              style={{ transitionDelay: "0.2s" }}>
@@ -47,10 +48,11 @@ export function VideoShowcase() {
 
             <div className="absolute bottom-8 left-8 right-8 flex flex-wrap items-end justify-between gap-4 md:bottom-12 md:left-12 md:right-12">
               <div>
-                <div className="text-[0.65rem] tracking-[0.4em] uppercase text-gold/80">Chapter 01</div>
-                <h3 className="font-display mt-3 text-2xl text-foreground md:text-4xl">Genesis of a New Mind</h3>
+                <div className="text-[0.65rem] tracking-[0.4em] uppercase text-gold/80">NeuroSmooth Flow™</div>
+                <h3 className="font-display mt-3 text-2xl text-foreground md:text-4xl">A guided return to calm</h3>
               </div>
               <div className="text-[0.7rem] tracking-[0.3em] uppercase text-muted-foreground">04:12</div>
+
             </div>
           </div>
         </div>
