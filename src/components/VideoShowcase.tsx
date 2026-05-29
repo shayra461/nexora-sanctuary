@@ -5,11 +5,12 @@ export function VideoShowcase() {
     <section className="relative py-32 md:py-44">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mx-auto max-w-2xl text-center">
-          <div className="eyebrow justify-center">A Cinematic Glimpse</div>
+          <div className="eyebrow justify-center">The Experience</div>
           <h2 className="font-display mt-6 text-[clamp(2rem,5vw,4.2rem)] leading-[1.05]">
-            An invitation to <span className="italic text-gold-gradient">stillness</span> in motion.
+            Stillness, in <span className="italic text-gold-gradient">motion.</span>
           </h2>
         </div>
+
 
         <div className="reveal group relative mt-20 overflow-hidden rounded-3xl border border-gold/20"
              style={{ transitionDelay: "0.2s" }}>
