@@ -28,6 +28,7 @@ const brands: Brand[] = [
     cta: "Explore the Mission",
     href: "#waitlist",
     image: bridgeImg,
+    logo: bridgeLogo,
     accent: "gold",
   },
   {
@@ -38,6 +39,7 @@ const brands: Brand[] = [
     cta: "Enter the Sound",
     href: "#experience",
     image: jazzImg,
+    logo: jazzLogo,
     accent: "amber",
   },
   {
@@ -48,9 +50,11 @@ const brands: Brand[] = [
     cta: "Find Your Flow",
     href: "#experience",
     image: flowImg,
+    logo: flowLogo,
     accent: "blue",
   },
 ];
+
 
 const accentMap = {
   gold: { glow: "rgba(212,175,55,0.45)", border: "rgba(212,175,55,0.35)", text: "text-gold" },
