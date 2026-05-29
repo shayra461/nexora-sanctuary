@@ -105,7 +105,7 @@ export function EcosystemOverview() {
                     alt={`${b.name} logo`}
                     loading="lazy"
                     className="relative h-[92%] w-auto max-w-[90%] object-contain transition-transform duration-[1800ms] ease-out group-hover:scale-[1.05]"
-                    style={{ mixBlendMode: "screen", filter: "drop-shadow(0 0 24px rgba(212,175,55,0.35))" }}
+                    style={{ filter: "drop-shadow(0 0 24px rgba(212,175,55,0.35))" }}
                   />
                 </div>
 
