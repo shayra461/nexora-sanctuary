@@ -1,6 +1,9 @@
 import bridgeImg from "@/assets/card-bridge.jpg";
 import jazzImg from "@/assets/card-jazz.jpg";
 import flowImg from "@/assets/card-flow.jpg";
+import bridgeLogo from "@/assets/logo-bridge.png";
+import jazzLogo from "@/assets/logo-jazz.png";
+import flowLogo from "@/assets/logo-flow.png";
 
 
 type Brand = {
@@ -11,8 +14,10 @@ type Brand = {
   cta: string;
   href: string;
   image: string;
+  logo: string;
   accent: "gold" | "amber" | "blue";
 };
+
 
 const brands: Brand[] = [
   {
@@ -23,6 +28,7 @@ const brands: Brand[] = [
     cta: "Explore the Mission",
     href: "#waitlist",
     image: bridgeImg,
+    logo: bridgeLogo,
     accent: "gold",
   },
   {
@@ -33,6 +39,7 @@ const brands: Brand[] = [
     cta: "Enter the Sound",
     href: "#experience",
     image: jazzImg,
+    logo: jazzLogo,
     accent: "amber",
   },
   {
@@ -43,9 +50,11 @@ const brands: Brand[] = [
     cta: "Find Your Flow",
     href: "#experience",
     image: flowImg,
+    logo: flowLogo,
     accent: "blue",
   },
 ];
+
 
 const accentMap = {
   gold: { glow: "rgba(212,175,55,0.45)", border: "rgba(212,175,55,0.35)", text: "text-gold" },
@@ -94,8 +103,17 @@ export function EcosystemOverview() {
                     height={1536}
                     className="h-full w-full object-cover transition-transform duration-[2200ms] ease-out group-hover:scale-[1.06]"
                   />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, transparent 30%, rgba(35,40,49,0.95) 100%)" }} />
+                  <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(15,17,21,0.35) 0%, rgba(15,17,21,0.55) 50%, rgba(35,40,49,0.98) 100%)" }} />
+                  {/* Brand logo */}
+                  <img
+                    src={b.logo}
+                    alt={`${b.name} logo`}
+                    loading="lazy"
+                    className="absolute left-1/2 top-1/2 h-[88%] w-auto max-w-[92%] -translate-x-1/2 -translate-y-1/2 object-contain transition-transform duration-[1800ms] ease-out group-hover:scale-[1.04]"
+                    style={{ filter: "drop-shadow(0 0 30px rgba(212,175,55,0.35))", mixBlendMode: "screen" }}
+                  />
                 </div>
+
 
                 {/* Body */}
                 <div className="relative px-8 pb-10 pt-7">
