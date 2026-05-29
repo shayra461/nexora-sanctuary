@@ -2,14 +2,6 @@ import bridgeImg from "@/assets/card-bridge.jpg";
 import jazzImg from "@/assets/card-jazz.jpg";
 import flowImg from "@/assets/card-flow.jpg";
 
-type Brand = {
-  name: string;
-  tag: string;
-  role: string;
-  body: string;
-  image: string;
-  accent: "gold" | "amber" | "blue";
-};
 
 type Brand = {
   name: string;
