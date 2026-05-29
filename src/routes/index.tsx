@@ -38,9 +38,8 @@ function Index() {
         <main>
           <Hero />
           <EcosystemOverview />
-          <ScienceSection />
           <ImmersiveExperience />
-          <CommunitySection />
+          <ScienceSection />
           <Waitlist />
         </main>
         <Footer />
