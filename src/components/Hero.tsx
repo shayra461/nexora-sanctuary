@@ -54,27 +54,48 @@ export function Hero() {
                  style={{ transform: "rotateX(60deg) rotateY(20deg)", animation: "spin-slow 120s linear infinite" }} />
           </div>
 
-          {/* Brain image */}
+          {/* Expanding energy waves */}
+          {[0, 1, 2].map((i) => (
+            <div
+              key={`wave-${i}`}
+              className="absolute inset-[10%] rounded-full border border-gold/30"
+              style={{
+                animation: `energy-wave 5s ease-out ${i * 1.6}s infinite`,
+                boxShadow: "0 0 40px rgba(212,175,55,0.25) inset, 0 0 40px rgba(212,175,55,0.25)",
+              }}
+            />
+          ))}
+
+          {/* Brain image — breathing + tilted */}
           <img
             src={heroBg}
             alt="Glowing golden neural brain"
             width={1536}
             height={1536}
-            className="relative h-full w-full object-contain animate-float-slow"
+            className="relative h-full w-full object-contain animate-brain-breathe"
             style={{
-              filter: "drop-shadow(0 0 80px rgba(212,175,55,0.4))",
+              filter: "drop-shadow(0 0 90px rgba(212,175,55,0.45))",
               transform: "translateZ(40px)",
+              mixBlendMode: "screen",
             }}
           />
 
           {/* Halo pulse */}
           <div className="absolute inset-[15%] -z-10 rounded-full animate-pulse-glow"
-               style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.55), transparent 70%)" }} />
+               style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.6), transparent 70%)" }} />
+
+          {/* Inner core glow */}
+          <div className="absolute inset-[32%] -z-10 rounded-full"
+               style={{
+                 background: "radial-gradient(closest-side, rgba(232,200,112,0.7), transparent 70%)",
+                 animation: "pulse-glow 4s ease-in-out infinite",
+                 filter: "blur(30px)",
+               }} />
 
           {/* Floating particle dots around the brain */}
-          {[...Array(10)].map((_, i) => {
-            const angle = (i / 10) * Math.PI * 2;
-            const r = 42 + (i % 3) * 5;
+          {[...Array(14)].map((_, i) => {
+            const angle = (i / 14) * Math.PI * 2;
+            const r = 40 + (i % 4) * 6;
             const left = 50 + Math.cos(angle) * r;
             const top = 50 + Math.sin(angle) * r;
             return (
@@ -84,10 +105,29 @@ export function Hero() {
                 style={{
                   left: `${left}%`,
                   top: `${top}%`,
-                  boxShadow: "0 0 12px var(--color-gold)",
-                  opacity: 0.55,
-                  animation: `float-slow ${8 + (i % 4) * 2}s ease-in-out ${i * 0.4}s infinite`,
+                  boxShadow: "0 0 14px var(--color-gold), 0 0 30px rgba(212,175,55,0.6)",
+                  animation: `synapse-spark ${3 + (i % 5) * 0.7}s ease-in-out ${i * 0.25}s infinite`,
                   transform: "translateZ(60px)",
+                }}
+              />
+            );
+          })}
+
+          {/* Drifting outer sparks */}
+          {[...Array(8)].map((_, i) => {
+            const angle = (i / 8) * Math.PI * 2 + 0.4;
+            const r = 58 + (i % 2) * 4;
+            const left = 50 + Math.cos(angle) * r;
+            const top = 50 + Math.sin(angle) * r;
+            return (
+              <span
+                key={`out-${i}`}
+                className="absolute h-1 w-1 rounded-full bg-gold-soft"
+                style={{
+                  left: `${left}%`,
+                  top: `${top}%`,
+                  boxShadow: "0 0 10px var(--color-gold-soft)",
+                  animation: `float-slow ${10 + (i % 3) * 2}s ease-in-out ${i * 0.5}s infinite`,
                 }}
               />
             );
