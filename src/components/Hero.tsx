@@ -1,11 +1,14 @@
 import { useEffect, useRef } from "react";
 import heroBg from "@/assets/hero-neuro-brain.jpg";
+import { useMouseTilt } from "@/hooks/use-scroll-parallax";
 
 export function Hero() {
+  const stageRef = useMouseTilt<HTMLDivElement>(10);
   const brainRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
 
-  // Subtle scroll parallax (restrained)
+  // Scroll parallax (restrained but layered)
   useEffect(() => {
     let raf = 0;
     const onScroll = () => {
@@ -13,10 +16,13 @@ export function Hero() {
       raf = requestAnimationFrame(() => {
         const y = window.scrollY;
         if (brainRef.current) {
-          brainRef.current.style.transform = `translate3d(0, ${y * -0.08}px, 0) scale(${1 + y * 0.00015})`;
+          brainRef.current.style.transform = `translate3d(0, ${y * -0.09}px, 0) scale(${1 + y * 0.0002})`;
+        }
+        if (ringRef.current) {
+          ringRef.current.style.transform = `translate3d(0, ${y * -0.04}px, 0) rotate(${y * 0.04}deg)`;
         }
         if (textRef.current) {
-          textRef.current.style.transform = `translate3d(0, ${y * 0.25}px, 0)`;
+          textRef.current.style.transform = `translate3d(0, ${y * 0.22}px, 0)`;
           textRef.current.style.opacity = `${Math.max(0, 1 - y / 700)}`;
         }
       });
@@ -28,33 +34,74 @@ export function Hero() {
 
   return (
     <section id="top" className="relative flex min-h-screen items-center overflow-hidden">
-      {/* Right-side glowing brain */}
+      {/* Right-side glowing 3D brain stage with mouse tilt */}
       <div
         ref={brainRef}
         className="pointer-events-none absolute inset-y-0 right-0 z-[2] hidden w-[58%] items-center justify-center will-change-transform md:flex"
       >
-        <div className="animate-float-slow relative h-[80%] w-[80%]">
+        <div
+          ref={stageRef}
+          className="pointer-events-auto relative h-[80%] w-[80%]"
+          style={{ transformStyle: "preserve-3d" as const, transition: "transform 0.4s cubic-bezier(0.16,1,0.3,1)" }}
+        >
+          {/* Orbiting rings */}
+          <div ref={ringRef} className="absolute inset-[8%] will-change-transform" style={{ transformStyle: "preserve-3d" as const }}>
+            <div className="absolute inset-0 rounded-full border border-gold/15 animate-spin-slow"
+                 style={{ transform: "rotateX(72deg)" }} />
+            <div className="absolute inset-[6%] rounded-full border border-gold/10"
+                 style={{ transform: "rotateX(72deg) rotateZ(45deg)", animation: "spin-slow 90s linear infinite reverse" }} />
+            <div className="absolute inset-[14%] rounded-full border border-gold-soft/20"
+                 style={{ transform: "rotateX(60deg) rotateY(20deg)", animation: "spin-slow 120s linear infinite" }} />
+          </div>
+
+          {/* Brain image */}
           <img
             src={heroBg}
             alt="Glowing golden neural brain"
             width={1536}
             height={1536}
-            className="h-full w-full object-contain"
-            style={{ filter: "drop-shadow(0 0 80px rgba(212,175,55,0.35))" }}
+            className="relative h-full w-full object-contain animate-float-slow"
+            style={{
+              filter: "drop-shadow(0 0 80px rgba(212,175,55,0.4))",
+              transform: "translateZ(40px)",
+            }}
           />
-          {/* halo */}
-          <div className="absolute inset-[15%] -z-10 rounded-full opacity-70 blur-3xl"
-               style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.45), transparent 70%)" }} />
+
+          {/* Halo pulse */}
+          <div className="absolute inset-[15%] -z-10 rounded-full animate-pulse-glow"
+               style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.55), transparent 70%)" }} />
+
+          {/* Floating particle dots around the brain */}
+          {[...Array(10)].map((_, i) => {
+            const angle = (i / 10) * Math.PI * 2;
+            const r = 42 + (i % 3) * 5;
+            const left = 50 + Math.cos(angle) * r;
+            const top = 50 + Math.sin(angle) * r;
+            return (
+              <span
+                key={i}
+                className="absolute h-1.5 w-1.5 rounded-full bg-gold"
+                style={{
+                  left: `${left}%`,
+                  top: `${top}%`,
+                  boxShadow: "0 0 12px var(--color-gold)",
+                  opacity: 0.55,
+                  animation: `float-slow ${8 + (i % 4) * 2}s ease-in-out ${i * 0.4}s infinite`,
+                  transform: "translateZ(60px)",
+                }}
+              />
+            );
+          })}
         </div>
       </div>
 
       {/* Mobile: centered subdued brain backdrop */}
       <div className="pointer-events-none absolute inset-0 md:hidden">
-        <img src={heroBg} alt="" className="h-full w-full object-cover opacity-30" />
+        <img src={heroBg} alt="" className="h-full w-full object-cover opacity-30 animate-float-slow" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(15,17,21,0.7) 0%, rgba(15,17,21,0.95) 100%)" }} />
       </div>
 
-      {/* Left-side darkening veil so headline sits on near-black */}
+      {/* Left-side darkening veil */}
       <div className="pointer-events-none absolute inset-0 hidden md:block"
            style={{ background: "linear-gradient(90deg, rgba(15,17,21,0.95) 0%, rgba(15,17,21,0.85) 35%, rgba(15,17,21,0.4) 60%, transparent 80%)" }} />
 
