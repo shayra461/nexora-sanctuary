@@ -48,10 +48,11 @@ export function VideoShowcase() {
 
             <div className="absolute bottom-8 left-8 right-8 flex flex-wrap items-end justify-between gap-4 md:bottom-12 md:left-12 md:right-12">
               <div>
-                <div className="text-[0.65rem] tracking-[0.4em] uppercase text-gold/80">Chapter 01</div>
-                <h3 className="font-display mt-3 text-2xl text-foreground md:text-4xl">Genesis of a New Mind</h3>
+                <div className="text-[0.65rem] tracking-[0.4em] uppercase text-gold/80">NeuroSmooth Flow™</div>
+                <h3 className="font-display mt-3 text-2xl text-foreground md:text-4xl">A guided return to calm</h3>
               </div>
               <div className="text-[0.7rem] tracking-[0.3em] uppercase text-muted-foreground">04:12</div>
+
             </div>
           </div>
         </div>
