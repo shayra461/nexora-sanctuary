@@ -48,6 +48,7 @@
   --animate-float-slow: float-slow 11s ease-in-out infinite;
   --animate-spin-slow: spin-slow 60s linear infinite;
   --animate-drift-particles: drift-particles 30s linear infinite;
+  --animate-brain-breathe: brain-breathe 7s ease-in-out infinite;
 }
 
 :root {
