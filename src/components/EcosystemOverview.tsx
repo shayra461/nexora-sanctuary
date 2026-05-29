@@ -1,6 +1,9 @@
 import bridgeImg from "@/assets/card-bridge.jpg";
 import jazzImg from "@/assets/card-jazz.jpg";
 import flowImg from "@/assets/card-flow.jpg";
+import bridgeLogo from "@/assets/logo-bridge.png";
+import jazzLogo from "@/assets/logo-jazz.png";
+import flowLogo from "@/assets/logo-flow.png";
 
 
 type Brand = {
@@ -11,8 +14,10 @@ type Brand = {
   cta: string;
   href: string;
   image: string;
+  logo: string;
   accent: "gold" | "amber" | "blue";
 };
+
 
 const brands: Brand[] = [
   {
