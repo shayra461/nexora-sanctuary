@@ -9,7 +9,7 @@ export function Nav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-10 md:py-7">
         <a href="#top" className="flex items-center gap-3">
           <span className="relative inline-block h-2 w-2 rounded-full bg-gold shadow-[0_0_18px_var(--color-gold)]" />
-          <span className="font-display text-lg tracking-[0.38em] text-foreground">BRIDGE</span>
+          <span className="font-display text-lg tracking-[0.32em] text-foreground whitespace-nowrap">NEUROSMOOTH ECOSYSTEM</span>
         </a>
         <nav className="hidden items-center gap-9 text-[0.7rem] tracking-[0.3em] uppercase text-muted-foreground md:flex">
           {links.map((l) => (
