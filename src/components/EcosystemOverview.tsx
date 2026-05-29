@@ -110,8 +110,12 @@ export function EcosystemOverview() {
                     {b.body}
                   </p>
 
+                  <a href={b.href} className={`mt-8 inline-flex items-center gap-2 text-[0.68rem] tracking-[0.32em] uppercase transition-colors ${a.text} hover:text-foreground`}>
+                    {b.cta} <span aria-hidden>→</span>
+                  </a>
+
                   {/* Accent rule */}
-                  <div className="mt-8 h-px w-full origin-left scale-x-50 transition-transform duration-700 group-hover:scale-x-100"
+                  <div className="mt-7 h-px w-full origin-left scale-x-50 transition-transform duration-700 group-hover:scale-x-100"
                        style={{ background: `linear-gradient(90deg, ${a.border}, transparent)` }} />
                 </div>
               </article>
