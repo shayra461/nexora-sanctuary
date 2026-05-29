@@ -83,8 +83,8 @@ export function Hero() {
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: "0.85s" }}>
-            <a href="#waitlist" className="btn-gold">Join The Waitlist <span aria-hidden>→</span></a>
-            <a href="#ecosystem" className="btn-ghost-gold">Enter The Experience</a>
+            <a href="#waitlist" className="btn-gold">Join the Experience <span aria-hidden>→</span></a>
+            <a href="#ecosystem" className="btn-ghost-gold">Explore the Ecosystem</a>
           </div>
         </div>
       </div>
