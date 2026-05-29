@@ -5,7 +5,7 @@ export function Waitlist() {
   const [sent, setSent] = useState(false);
 
   return (
-    <section id="waitlist" className="relative py-40">
+    <section id="waitlist" className="relative py-28 md:py-36">
       <div aria-hidden className="absolute inset-0 -z-10">
         <div className="absolute left-1/2 top-1/2 h-[110vh] w-[110vh] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 animate-pulse-glow"
              style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.3), transparent 70%)" }} />

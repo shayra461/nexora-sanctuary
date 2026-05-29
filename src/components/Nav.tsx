@@ -1,9 +1,8 @@
 export function Nav() {
   const links = [
     { href: "#ecosystem", label: "Ecosystem" },
-    { href: "#science", label: "Science" },
     { href: "#experience", label: "Experience" },
-    { href: "#community", label: "Community" },
+    { href: "#science", label: "Science" },
   ];
   return (
     <header className="fixed top-0 left-0 right-0 z-50 animate-fade-in">

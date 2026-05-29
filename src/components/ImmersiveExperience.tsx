@@ -31,7 +31,7 @@ const cards: Card[] = [
 
 export function ImmersiveExperience() {
   return (
-    <section id="experience" className="relative py-32 md:py-44">
+    <section id="experience" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mx-auto max-w-2xl text-center">
           <div className="eyebrow justify-center">The Immersion</div>

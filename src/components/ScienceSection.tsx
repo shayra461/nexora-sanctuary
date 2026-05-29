@@ -8,7 +8,7 @@ const bullets = [
 
 export function ScienceSection() {
   return (
-    <section id="science" className="relative py-32 md:py-44">
+    <section id="science" className="relative py-24 md:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:grid-cols-2 md:gap-24 md:px-10">
         {/* Image */}
         <div className="reveal relative">
