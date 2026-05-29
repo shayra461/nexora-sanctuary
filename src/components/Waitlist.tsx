@@ -6,21 +6,20 @@ export function Waitlist() {
 
   return (
     <section id="waitlist" className="relative py-40">
-      {/* Atmospheric backdrop */}
       <div aria-hidden className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-1/2 h-[120vh] w-[120vh] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-60 animate-pulse-glow"
-             style={{ background: "radial-gradient(closest-side, oklch(0.74 0.16 55 / 0.3), transparent 70%)" }} />
+        <div className="absolute left-1/2 top-1/2 h-[110vh] w-[110vh] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-50 animate-pulse-glow"
+             style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.3), transparent 70%)" }} />
       </div>
 
       <div className="mx-auto max-w-3xl px-6 text-center md:px-10">
-        <div className="reveal eyebrow justify-center">Limited Access</div>
+        <div className="reveal eyebrow justify-center">Private Access</div>
         <h2 className="reveal font-display mt-8 text-[clamp(2.4rem,6vw,5.2rem)] leading-[1.02]"
             style={{ transitionDelay: "0.15s" }}>
-          Be the first to <span className="italic text-gold-gradient">experience</span> Nexora.
+          Be among the first to <span className="italic text-gold-gradient">enter</span>.
         </h2>
         <p className="reveal mt-8 text-base text-muted-foreground md:text-lg" style={{ transitionDelay: "0.3s" }}>
-          A private invitation to join our founding circle. Receive cinematic updates,
-          early access, and a quiet sanctuary delivered to your inbox.
+          Join the founding circle for early access, cinematic updates and a
+          quiet sanctuary delivered to your inbox.
         </p>
 
         <form
@@ -29,14 +28,15 @@ export function Waitlist() {
           style={{ transitionDelay: "0.45s" }}
         >
           <div className="relative flex-1">
-            <div className="pointer-events-none absolute -inset-px rounded-full opacity-70 blur-md"
-                 style={{ background: "linear-gradient(90deg, oklch(0.82 0.14 78 / 0.5), oklch(0.74 0.16 55 / 0.4))" }} />
+            <div className="pointer-events-none absolute -inset-px rounded-full opacity-60 blur-md"
+                 style={{ background: "linear-gradient(90deg, rgba(212,175,55,0.5), rgba(61,77,99,0.5))" }} />
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
+              aria-label="Email address"
               className="relative w-full rounded-full border border-gold/30 bg-ink/70 px-7 py-4 text-sm tracking-wide text-foreground placeholder:text-muted-foreground/60 outline-none backdrop-blur-md transition-all focus:border-gold focus:bg-ink/90 focus:shadow-[0_0_40px_-10px_var(--color-gold)]"
             />
           </div>
