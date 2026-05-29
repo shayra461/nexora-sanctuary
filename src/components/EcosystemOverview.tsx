@@ -93,26 +93,23 @@ export function EcosystemOverview() {
                   style={{ background: `radial-gradient(60% 60% at 50% 0%, ${a.glow}, transparent 70%)` }}
                 />
 
-                {/* Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <img
-                    src={b.image}
-                    alt=""
-                    loading="lazy"
-                    width={1080}
-                    height={1536}
-                    className="h-full w-full object-cover transition-transform duration-[2200ms] ease-out group-hover:scale-[1.06]"
+                {/* Brand logo stage — pure, no box */}
+                <div className="relative flex h-64 items-center justify-center overflow-hidden">
+                  <div
+                    aria-hidden
+                    className="absolute inset-0"
+                    style={{ background: `radial-gradient(60% 70% at 50% 40%, ${a.glow.replace("0.45", "0.18")}, transparent 70%)` }}
                   />
-                  <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(15,17,21,0.35) 0%, rgba(15,17,21,0.55) 50%, rgba(35,40,49,0.98) 100%)" }} />
-                  {/* Brand logo */}
                   <img
                     src={b.logo}
                     alt={`${b.name} logo`}
                     loading="lazy"
-                    className="absolute left-1/2 top-1/2 h-[88%] w-auto max-w-[92%] -translate-x-1/2 -translate-y-1/2 object-contain transition-transform duration-[1800ms] ease-out group-hover:scale-[1.04]"
-                    style={{ filter: "drop-shadow(0 0 30px rgba(212,175,55,0.35))", mixBlendMode: "screen" }}
+                    className="relative h-[92%] w-auto max-w-[90%] object-contain transition-transform duration-[1800ms] ease-out group-hover:scale-[1.05]"
+                    style={{ mixBlendMode: "screen", filter: "drop-shadow(0 0 24px rgba(212,175,55,0.35))" }}
                   />
                 </div>
+
+
 
 
                 {/* Body */}
