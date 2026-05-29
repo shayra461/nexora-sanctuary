@@ -48,6 +48,7 @@
   --animate-float-slow: float-slow 11s ease-in-out infinite;
   --animate-spin-slow: spin-slow 60s linear infinite;
   --animate-drift-particles: drift-particles 30s linear infinite;
+  --animate-brain-breathe: brain-breathe 7s ease-in-out infinite;
 }
 
 :root {
@@ -114,6 +115,19 @@
 @keyframes drift-particles {
   0% { background-position: 0 0; }
   100% { background-position: 1000px -1000px; }
+}
+@keyframes energy-wave {
+  0% { transform: scale(0.6); opacity: 0.55; }
+  80% { opacity: 0.05; }
+  100% { transform: scale(1.7); opacity: 0; }
+}
+@keyframes synapse-spark {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+@keyframes brain-breathe {
+  0%, 100% { transform: scale(1) translateY(0); filter: drop-shadow(0 0 60px rgba(212,175,55,0.35)) brightness(1); }
+  50% { transform: scale(1.035) translateY(-10px); filter: drop-shadow(0 0 120px rgba(212,175,55,0.6)) brightness(1.08); }
 }
 
 @layer base {
