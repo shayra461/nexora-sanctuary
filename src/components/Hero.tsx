@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import heroBg from "@/assets/hero-neuro-brain.jpg";
+import heroBg from "@/assets/hero-neuro-brain.png";
 import { useMouseTilt } from "@/hooks/use-scroll-parallax";
 
 export function Hero() {
