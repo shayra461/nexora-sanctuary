@@ -11,12 +11,25 @@ type Brand = {
   accent: "gold" | "amber" | "blue";
 };
 
+type Brand = {
+  name: string;
+  tag: string;
+  role: string;
+  body: string;
+  cta: string;
+  href: string;
+  image: string;
+  accent: "gold" | "amber" | "blue";
+};
+
 const brands: Brand[] = [
   {
     name: "Bridge Healing Alliance™",
     tag: "The Mission",
     role: "A movement of healing & advocacy",
-    body: "A global movement built around trust, transformation and emotional strength — bridging people to the support they deserve.",
+    body: "A global movement built around trust, transformation and emotional strength.",
+    cta: "Explore the Mission",
+    href: "#waitlist",
     image: bridgeImg,
     accent: "gold",
   },
@@ -24,7 +37,9 @@ const brands: Brand[] = [
     name: "NeuroSmooth Jazz™",
     tag: "The Sound",
     role: "Sound-based emotional wellness",
-    body: "Immersive, moody compositions designed to decompress the nervous system and dissolve the noise of the day.",
+    body: "Immersive, moody compositions that decompress the nervous system.",
+    cta: "Enter the Sound",
+    href: "#experience",
     image: jazzImg,
     accent: "amber",
   },
@@ -32,7 +47,9 @@ const brands: Brand[] = [
     name: "NeuroSmooth Flow™",
     tag: "The Experience",
     role: "Guided nervous system wellness",
-    body: "Calm, restorative protocols engineered to regulate the body — a grounding return to safety, focus and clarity.",
+    body: "Calm, restorative protocols — a grounding return to safety and clarity.",
+    cta: "Find Your Flow",
+    href: "#experience",
     image: flowImg,
     accent: "blue",
   },
@@ -46,7 +63,7 @@ const accentMap = {
 
 export function EcosystemOverview() {
   return (
-    <section id="ecosystem" className="relative py-32 md:py-44">
+    <section id="ecosystem" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mx-auto max-w-2xl text-center">
           <div className="eyebrow justify-center">The Ecosystem</div>
