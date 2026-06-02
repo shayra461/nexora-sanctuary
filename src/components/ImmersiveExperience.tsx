@@ -74,14 +74,14 @@ export function ImmersiveExperience() {
                   className="pointer-events-none absolute -inset-px opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100"
                   style={{
                     background: isGold
-                      ? "radial-gradient(80% 60% at 50% 100%, rgba(212,175,55,0.5), transparent 70%)"
-                      : "radial-gradient(80% 60% at 50% 100%, rgba(120,160,210,0.45), transparent 70%)",
+                      ? "radial-gradient(80% 60% at 50% 100%, rgba(212,175,55,0.55), transparent 70%)"
+                      : "radial-gradient(80% 60% at 50% 100%, rgba(20,184,166,0.6), transparent 70%)",
                   }}
                 />
 
                 {/* Content */}
                 <div className="relative flex h-[60vh] flex-col justify-end p-9 md:h-[68vh] md:p-12">
-                  <div className={`text-[0.62rem] tracking-[0.4em] uppercase ${isGold ? "text-gold" : "text-[#9DB3D6]"}`}>
+                  <div className={`text-[0.62rem] tracking-[0.4em] uppercase ${isGold ? "text-gold" : "text-teal-soft"}`}>
                     {c.tag}
                   </div>
                   <h3 className="font-display mt-5 text-3xl leading-[1.1] text-foreground md:text-[2.4rem]">
@@ -90,7 +90,7 @@ export function ImmersiveExperience() {
                   <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
                     {c.body}
                   </p>
-                  <div className="mt-8 inline-flex items-center gap-3 text-[0.7rem] tracking-[0.35em] uppercase text-foreground/85 transition-colors group-hover:text-gold">
+                  <div className={`mt-8 inline-flex items-center gap-3 text-[0.7rem] tracking-[0.35em] uppercase text-foreground/85 transition-colors ${isGold ? "group-hover:text-gold" : "group-hover:text-teal-soft"}`}>
                     {c.name} <span aria-hidden>→</span>
                   </div>
                 </div>
