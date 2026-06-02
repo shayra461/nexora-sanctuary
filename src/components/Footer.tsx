@@ -54,7 +54,7 @@ export function Footer() {
 
       <div className="divider-glow mx-auto mt-16 max-w-7xl" />
       <div className="mx-auto mt-8 flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-[0.7rem] tracking-[0.3em] uppercase text-muted-foreground/70 md:flex-row md:px-10">
-        <span>© {new Date().getFullYear()} Bridge Healing Alliance · All rights reserved</span>
+        <span>© {new Date().getFullYear()} NeuroSmooth Ecosystem · All rights reserved</span>
         <span>Crafted with intention</span>
       </div>
     </footer>
