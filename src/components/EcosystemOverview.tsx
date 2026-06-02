@@ -22,10 +22,10 @@ type Brand = {
 const brands: Brand[] = [
   {
     name: "Bridge Healing Alliance™",
-    tag: "The Mission",
-    role: "A movement of healing & advocacy",
-    body: "A global movement built around trust, transformation and emotional strength.",
-    cta: "Explore the Mission",
+    tag: "The Movement",
+    role: "A global transformation alliance",
+    body: "A movement built on lived experience — guiding leaders, survivors and seekers to rebuild stronger lives.",
+    cta: "Join the Movement",
     href: "#waitlist",
     image: bridgeImg,
     logo: bridgeLogo,
@@ -34,8 +34,8 @@ const brands: Brand[] = [
   {
     name: "NeuroSmooth Jazz™",
     tag: "The Sound",
-    role: "Sound-based emotional wellness",
-    body: "Immersive, moody compositions that decompress the nervous system.",
+    role: "Resilience through sound",
+    body: "Cinematic, soul-tuned compositions that decompress the mind and reawaken the inner pulse of purpose.",
     cta: "Enter the Sound",
     href: "#experience",
     image: jazzImg,
@@ -44,9 +44,9 @@ const brands: Brand[] = [
   },
   {
     name: "NeuroSmooth Flow™",
-    tag: "The Experience",
-    role: "Guided nervous system wellness",
-    body: "Calm, restorative protocols — a grounding return to safety and clarity.",
+    tag: "The Method",
+    role: "The transformation framework",
+    body: "Guided rituals and protocols that help you reclaim clarity, ground your strength and step into the next version of you.",
     cta: "Find Your Flow",
     href: "#experience",
     image: flowImg,
@@ -57,9 +57,9 @@ const brands: Brand[] = [
 
 
 const accentMap = {
-  gold: { glow: "rgba(212,175,55,0.45)", border: "rgba(212,175,55,0.35)", text: "text-gold" },
-  amber: { glow: "rgba(232,200,112,0.45)", border: "rgba(232,200,112,0.32)", text: "text-gold-soft" },
-  blue: { glow: "rgba(120,160,210,0.45)", border: "rgba(120,160,210,0.32)", text: "text-[#9DB3D6]" },
+  gold: { glow: "rgba(212,175,55,0.55)", border: "rgba(212,175,55,0.45)", text: "text-gold" },
+  amber: { glow: "rgba(232,200,112,0.55)", border: "rgba(232,200,112,0.42)", text: "text-gold-soft" },
+  blue: { glow: "rgba(20,184,166,0.55)", border: "rgba(20,184,166,0.45)", text: "text-teal-soft" },
 };
 
 export function EcosystemOverview() {
