@@ -44,12 +44,12 @@ export function Hero() {
           className="pointer-events-auto relative h-[80%] w-[80%]"
           style={{ transformStyle: "preserve-3d" as const, transition: "transform 0.4s cubic-bezier(0.16,1,0.3,1)" }}
         >
-          {/* Orbiting rings */}
+          {/* Orbiting rings — teal + gold layered */}
           <div ref={ringRef} className="absolute inset-[8%] will-change-transform" style={{ transformStyle: "preserve-3d" as const }}>
-            <div className="absolute inset-0 rounded-full border border-gold/15 animate-spin-slow"
-                 style={{ transform: "rotateX(72deg)" }} />
-            <div className="absolute inset-[6%] rounded-full border border-gold/10"
-                 style={{ transform: "rotateX(72deg) rotateZ(45deg)", animation: "spin-slow 90s linear infinite reverse" }} />
+            <div className="absolute inset-0 rounded-full border animate-spin-slow"
+                 style={{ transform: "rotateX(72deg)", borderColor: "rgba(94,234,212,0.22)" }} />
+            <div className="absolute inset-[6%] rounded-full border"
+                 style={{ transform: "rotateX(72deg) rotateZ(45deg)", animation: "spin-slow 90s linear infinite reverse", borderColor: "rgba(212,175,55,0.16)" }} />
             <div className="absolute inset-[14%] rounded-full border border-gold-soft/20"
                  style={{ transform: "rotateX(60deg) rotateY(20deg)", animation: "spin-slow 120s linear infinite" }} />
           </div>
