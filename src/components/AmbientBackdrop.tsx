@@ -62,9 +62,12 @@ export function AmbientBackdrop() {
       {/* slow gold halo top */}
       <div className="absolute -top-1/3 left-1/2 h-[110vh] w-[110vh] -translate-x-1/2 rounded-full opacity-40 animate-pulse-glow"
            style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.32), transparent 70%)" }} />
-      {/* subtle blue calm bottom */}
-      <div className="absolute bottom-[-25%] right-[-15%] h-[80vh] w-[80vh] rounded-full opacity-35 animate-pulse-glow"
-           style={{ background: "radial-gradient(closest-side, rgba(61,77,99,0.45), transparent 70%)", animationDelay: "2s" }} />
+      {/* signature teal aurora — left */}
+      <div className="absolute top-[10%] left-[-15%] h-[90vh] w-[90vh] rounded-full opacity-55"
+           style={{ background: "radial-gradient(closest-side, rgba(20,184,166,0.45), transparent 70%)", animation: "teal-pulse 9s ease-in-out infinite", filter: "blur(20px)" }} />
+      {/* deep teal glow — bottom right */}
+      <div className="absolute bottom-[-20%] right-[-10%] h-[80vh] w-[80vh] rounded-full opacity-50"
+           style={{ background: "radial-gradient(closest-side, rgba(14,124,112,0.65), transparent 70%)", animation: "teal-pulse 11s ease-in-out infinite", animationDelay: "2s" }} />
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
       {/* grain */}
       <div className="absolute inset-0 opacity-[0.05] mix-blend-overlay"
