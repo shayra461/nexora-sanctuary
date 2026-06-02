@@ -47,8 +47,14 @@ export function ImmersiveExperience() {
             return (
               <article
                 key={c.name}
-                className="reveal group relative overflow-hidden rounded-2xl border border-gold/12 transition-all duration-700 hover:-translate-y-2"
-                style={{ transitionDelay: `${i * 0.15}s` }}
+                className="reveal group relative overflow-hidden rounded-2xl transition-all duration-700 hover:-translate-y-2"
+                style={{
+                  border: isGold ? "1px solid rgba(212,175,55,0.22)" : "1px solid rgba(20,184,166,0.28)",
+                  boxShadow: isGold
+                    ? "0 40px 100px -30px rgba(0,0,0,0.95), 0 0 60px -20px rgba(212,175,55,0.35)"
+                    : "0 40px 100px -30px rgba(0,0,0,0.95), 0 0 60px -20px rgba(20,184,166,0.45)",
+                  transitionDelay: `${i * 0.15}s`,
+                }}
               >
                 {/* Image background */}
                 <img
