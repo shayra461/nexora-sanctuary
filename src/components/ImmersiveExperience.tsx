@@ -7,25 +7,25 @@ type Card = {
   title: string;
   body: string;
   image: string;
-  accent: "gold" | "blue";
+  accent: "gold" | "teal";
 };
 
 const cards: Card[] = [
   {
     name: "NeuroSmooth Jazz™",
     tag: "Sound · Atmosphere",
-    title: "Decompress into a smoother frequency.",
-    body: "Cinematic, moody soundscapes that quiet the noise and invite you back into yourself.",
+    title: "Decompress. Reawaken. Rise.",
+    body: "Cinematic compositions that quiet the noise of the world and re-tune you to your own pulse of purpose.",
     image: jazzImg,
     accent: "gold",
   },
   {
     name: "NeuroSmooth Flow™",
-    tag: "Wellness · Regulation",
-    title: "A calm return to the body.",
-    body: "Guided nervous system protocols designed to ground, restore and gently regulate.",
+    tag: "Method · Resilience",
+    title: "Reclaim your strength.",
+    body: "Guided rituals that ground you, sharpen clarity and rebuild the inner architecture for the next chapter of your life.",
     image: flowImg,
-    accent: "blue",
+    accent: "teal",
   },
 ];
 
@@ -34,10 +34,11 @@ export function ImmersiveExperience() {
     <section id="experience" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mx-auto max-w-2xl text-center">
-          <div className="eyebrow justify-center">The Immersion</div>
+          <div className="eyebrow-teal justify-center">The Method</div>
           <h2 className="font-display mt-7 text-[clamp(2rem,5vw,4.2rem)] leading-[1.05]">
-            Two doors into <span className="italic text-gold-gradient">stillness</span>.
+            Two doors into <span className="italic text-teal-gold-gradient">your next chapter</span>.
           </h2>
+          <div className="divider-teal mx-auto mt-8 w-32" />
         </div>
 
         <div className="mt-20 grid gap-8 md:grid-cols-2">
@@ -46,8 +47,14 @@ export function ImmersiveExperience() {
             return (
               <article
                 key={c.name}
-                className="reveal group relative overflow-hidden rounded-2xl border border-gold/12 transition-all duration-700 hover:-translate-y-2"
-                style={{ transitionDelay: `${i * 0.15}s` }}
+                className="reveal group relative overflow-hidden rounded-2xl transition-all duration-700 hover:-translate-y-2"
+                style={{
+                  border: isGold ? "1px solid rgba(212,175,55,0.22)" : "1px solid rgba(20,184,166,0.28)",
+                  boxShadow: isGold
+                    ? "0 40px 100px -30px rgba(0,0,0,0.95), 0 0 60px -20px rgba(212,175,55,0.35)"
+                    : "0 40px 100px -30px rgba(0,0,0,0.95), 0 0 60px -20px rgba(20,184,166,0.45)",
+                  transitionDelay: `${i * 0.15}s`,
+                }}
               >
                 {/* Image background */}
                 <img
@@ -67,14 +74,14 @@ export function ImmersiveExperience() {
                   className="pointer-events-none absolute -inset-px opacity-0 blur-2xl transition-opacity duration-700 group-hover:opacity-100"
                   style={{
                     background: isGold
-                      ? "radial-gradient(80% 60% at 50% 100%, rgba(212,175,55,0.5), transparent 70%)"
-                      : "radial-gradient(80% 60% at 50% 100%, rgba(120,160,210,0.45), transparent 70%)",
+                      ? "radial-gradient(80% 60% at 50% 100%, rgba(212,175,55,0.55), transparent 70%)"
+                      : "radial-gradient(80% 60% at 50% 100%, rgba(20,184,166,0.6), transparent 70%)",
                   }}
                 />
 
                 {/* Content */}
                 <div className="relative flex h-[60vh] flex-col justify-end p-9 md:h-[68vh] md:p-12">
-                  <div className={`text-[0.62rem] tracking-[0.4em] uppercase ${isGold ? "text-gold" : "text-[#9DB3D6]"}`}>
+                  <div className={`text-[0.62rem] tracking-[0.4em] uppercase ${isGold ? "text-gold" : "text-teal-soft"}`}>
                     {c.tag}
                   </div>
                   <h3 className="font-display mt-5 text-3xl leading-[1.1] text-foreground md:text-[2.4rem]">
@@ -83,7 +90,7 @@ export function ImmersiveExperience() {
                   <p className="mt-5 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
                     {c.body}
                   </p>
-                  <div className="mt-8 inline-flex items-center gap-3 text-[0.7rem] tracking-[0.35em] uppercase text-foreground/85 transition-colors group-hover:text-gold">
+                  <div className={`mt-8 inline-flex items-center gap-3 text-[0.7rem] tracking-[0.35em] uppercase text-foreground/85 transition-colors ${isGold ? "group-hover:text-gold" : "group-hover:text-teal-soft"}`}>
                     {c.name} <span aria-hidden>→</span>
                   </div>
                 </div>

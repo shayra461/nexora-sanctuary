@@ -23,7 +23,7 @@ export function AmbientBackdrop() {
       vx: (Math.random() - 0.5) * 0.08,
       vy: -Math.random() * 0.18 - 0.03,
       a: Math.random() * 0.5 + 0.2,
-      blue: Math.random() > 0.88,
+      teal: Math.random() > 0.55,
     }));
 
     let raf = 0;
@@ -36,11 +36,11 @@ export function AmbientBackdrop() {
         if (p.x < -10) p.x = w + 10;
         if (p.x > w + 10) p.x = -10;
         const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 9);
-        if (p.blue) {
-          grd.addColorStop(0, `rgba(120, 150, 200, ${p.a})`);
-          grd.addColorStop(1, "rgba(120, 150, 200, 0)");
+        if (p.teal) {
+          grd.addColorStop(0, `rgba(94, 234, 212, ${p.a})`);
+          grd.addColorStop(1, "rgba(94, 234, 212, 0)");
         } else {
-          grd.addColorStop(0, `rgba(212, 175, 55, ${p.a})`);
+          grd.addColorStop(0, `rgba(232, 200, 112, ${p.a})`);
           grd.addColorStop(1, "rgba(212, 175, 55, 0)");
         }
         ctx.fillStyle = grd;
@@ -62,9 +62,12 @@ export function AmbientBackdrop() {
       {/* slow gold halo top */}
       <div className="absolute -top-1/3 left-1/2 h-[110vh] w-[110vh] -translate-x-1/2 rounded-full opacity-40 animate-pulse-glow"
            style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.32), transparent 70%)" }} />
-      {/* subtle blue calm bottom */}
-      <div className="absolute bottom-[-25%] right-[-15%] h-[80vh] w-[80vh] rounded-full opacity-35 animate-pulse-glow"
-           style={{ background: "radial-gradient(closest-side, rgba(61,77,99,0.45), transparent 70%)", animationDelay: "2s" }} />
+      {/* signature teal aurora — left */}
+      <div className="absolute top-[10%] left-[-15%] h-[90vh] w-[90vh] rounded-full opacity-55"
+           style={{ background: "radial-gradient(closest-side, rgba(20,184,166,0.45), transparent 70%)", animation: "teal-pulse 9s ease-in-out infinite", filter: "blur(20px)" }} />
+      {/* deep teal glow — bottom right */}
+      <div className="absolute bottom-[-20%] right-[-10%] h-[80vh] w-[80vh] rounded-full opacity-50"
+           style={{ background: "radial-gradient(closest-side, rgba(14,124,112,0.65), transparent 70%)", animation: "teal-pulse 11s ease-in-out infinite", animationDelay: "2s" }} />
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" />
       {/* grain */}
       <div className="absolute inset-0 opacity-[0.05] mix-blend-overlay"

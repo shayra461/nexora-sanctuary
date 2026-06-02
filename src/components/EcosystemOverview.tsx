@@ -22,10 +22,10 @@ type Brand = {
 const brands: Brand[] = [
   {
     name: "Bridge Healing Alliance™",
-    tag: "The Mission",
-    role: "A movement of healing & advocacy",
-    body: "A global movement built around trust, transformation and emotional strength.",
-    cta: "Explore the Mission",
+    tag: "The Movement",
+    role: "A global transformation alliance",
+    body: "A movement built on lived experience — guiding leaders, survivors and seekers to rebuild stronger lives.",
+    cta: "Join the Movement",
     href: "#waitlist",
     image: bridgeImg,
     logo: bridgeLogo,
@@ -34,8 +34,8 @@ const brands: Brand[] = [
   {
     name: "NeuroSmooth Jazz™",
     tag: "The Sound",
-    role: "Sound-based emotional wellness",
-    body: "Immersive, moody compositions that decompress the nervous system.",
+    role: "Resilience through sound",
+    body: "Cinematic, soul-tuned compositions that decompress the mind and reawaken the inner pulse of purpose.",
     cta: "Enter the Sound",
     href: "#experience",
     image: jazzImg,
@@ -44,9 +44,9 @@ const brands: Brand[] = [
   },
   {
     name: "NeuroSmooth Flow™",
-    tag: "The Experience",
-    role: "Guided nervous system wellness",
-    body: "Calm, restorative protocols — a grounding return to safety and clarity.",
+    tag: "The Method",
+    role: "The transformation framework",
+    body: "Guided rituals and protocols that help you reclaim clarity, ground your strength and step into the next version of you.",
     cta: "Find Your Flow",
     href: "#experience",
     image: flowImg,
@@ -57,9 +57,9 @@ const brands: Brand[] = [
 
 
 const accentMap = {
-  gold: { glow: "rgba(212,175,55,0.45)", border: "rgba(212,175,55,0.35)", text: "text-gold" },
-  amber: { glow: "rgba(232,200,112,0.45)", border: "rgba(232,200,112,0.32)", text: "text-gold-soft" },
-  blue: { glow: "rgba(120,160,210,0.45)", border: "rgba(120,160,210,0.32)", text: "text-[#9DB3D6]" },
+  gold: { glow: "rgba(212,175,55,0.55)", border: "rgba(212,175,55,0.45)", text: "text-gold" },
+  amber: { glow: "rgba(232,200,112,0.55)", border: "rgba(232,200,112,0.42)", text: "text-gold-soft" },
+  blue: { glow: "rgba(20,184,166,0.55)", border: "rgba(20,184,166,0.45)", text: "text-teal-soft" },
 };
 
 export function EcosystemOverview() {
@@ -67,14 +67,15 @@ export function EcosystemOverview() {
     <section id="ecosystem" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mx-auto max-w-2xl text-center">
-          <div className="eyebrow justify-center">The Ecosystem</div>
+          <div className="eyebrow-teal justify-center">The Transformation Framework</div>
           <h2 className="font-display mt-7 text-[clamp(2.2rem,5vw,4.4rem)] leading-[1.05]">
-            One universe, <span className="italic text-gold-gradient">three doors</span>.
+            One framework, <span className="italic text-teal-gold-gradient">three doorways</span>.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-            A connected family of brands — a mission, a sound, and an experience —
-            woven into a single emotional landscape.
+            A movement, a sound and a method — three doorways into the same proven
+            path: rebuilding stronger lives through resilience, purpose and personal transformation.
           </p>
+          <div className="divider-teal mx-auto mt-10 w-40" />
         </div>
 
         <div className="mt-20 grid gap-8 md:grid-cols-3 md:gap-7">
@@ -83,7 +84,7 @@ export function EcosystemOverview() {
             return (
               <article
                 key={b.name}
-                className="reveal group relative overflow-hidden rounded-2xl surface-card transition-all duration-700 hover:-translate-y-2"
+                className="reveal group relative overflow-hidden rounded-2xl luxe-card transition-all duration-700 hover:-translate-y-2"
                 style={{ transitionDelay: `${i * 0.12}s` }}
               >
                 {/* Glow halo on hover */}

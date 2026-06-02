@@ -14,14 +14,14 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Bridge Healing Alliance — The Premier Neuro Wellness Experience" },
+      { title: "Bridge Healing Alliance — Personal Transformation Movement" },
       {
         name: "description",
         content:
-          "Bridge Healing Alliance, NeuroSmooth Jazz and NeuroSmooth Flow — a premium cinematic neuro wellness ecosystem for the elevated mind.",
+          "From a life-altering challenge to a proven transformation framework — Bridge Healing Alliance is a premium movement guiding others to rebuild, rise and lead through lived experience.",
       },
-      { property: "og:title", content: "Bridge Healing Alliance — The Premier Neuro Wellness Experience" },
-      { property: "og:description", content: "A premium cinematic neuro wellness universe." },
+      { property: "og:title", content: "Bridge Healing Alliance — Personal Transformation Movement" },
+      { property: "og:description", content: "Resilience. Reinvention. A luxury transformation framework built from lived experience." },
     ],
   }),
 });

@@ -44,29 +44,32 @@ export function Hero() {
           className="pointer-events-auto relative h-[80%] w-[80%]"
           style={{ transformStyle: "preserve-3d" as const, transition: "transform 0.4s cubic-bezier(0.16,1,0.3,1)" }}
         >
-          {/* Orbiting rings */}
+          {/* Orbiting rings — teal + gold layered */}
           <div ref={ringRef} className="absolute inset-[8%] will-change-transform" style={{ transformStyle: "preserve-3d" as const }}>
-            <div className="absolute inset-0 rounded-full border border-gold/15 animate-spin-slow"
-                 style={{ transform: "rotateX(72deg)" }} />
-            <div className="absolute inset-[6%] rounded-full border border-gold/10"
-                 style={{ transform: "rotateX(72deg) rotateZ(45deg)", animation: "spin-slow 90s linear infinite reverse" }} />
+            <div className="absolute inset-0 rounded-full border animate-spin-slow"
+                 style={{ transform: "rotateX(72deg)", borderColor: "rgba(94,234,212,0.22)" }} />
+            <div className="absolute inset-[6%] rounded-full border"
+                 style={{ transform: "rotateX(72deg) rotateZ(45deg)", animation: "spin-slow 90s linear infinite reverse", borderColor: "rgba(212,175,55,0.16)" }} />
             <div className="absolute inset-[14%] rounded-full border border-gold-soft/20"
                  style={{ transform: "rotateX(60deg) rotateY(20deg)", animation: "spin-slow 120s linear infinite" }} />
           </div>
 
-          {/* Expanding energy waves */}
+          {/* Expanding energy waves — alternating teal & gold */}
           {[0, 1, 2].map((i) => (
             <div
               key={`wave-${i}`}
-              className="absolute inset-[10%] rounded-full border border-gold/30"
+              className="absolute inset-[10%] rounded-full border"
               style={{
+                borderColor: i % 2 === 0 ? "rgba(94,234,212,0.35)" : "rgba(212,175,55,0.30)",
                 animation: `energy-wave 5s ease-out ${i * 1.6}s infinite`,
-                boxShadow: "0 0 40px rgba(212,175,55,0.25) inset, 0 0 40px rgba(212,175,55,0.25)",
+                boxShadow: i % 2 === 0
+                  ? "0 0 50px rgba(20,184,166,0.35) inset, 0 0 50px rgba(20,184,166,0.35)"
+                  : "0 0 40px rgba(212,175,55,0.25) inset, 0 0 40px rgba(212,175,55,0.25)",
               }}
             />
           ))}
 
-          {/* Brain image — breathing + tilted */}
+          {/* Brain image — breathing + tilted, teal-gold dual glow */}
           <img
             src={heroBg}
             alt="Glowing golden neural brain"
@@ -74,37 +77,45 @@ export function Hero() {
             height={1536}
             className="relative h-full w-full object-contain animate-brain-breathe"
             style={{
-              filter: "drop-shadow(0 0 90px rgba(212,175,55,0.45))",
+              filter: "drop-shadow(0 0 60px rgba(20,184,166,0.55)) drop-shadow(0 0 90px rgba(212,175,55,0.45))",
               transform: "translateZ(40px)",
             }}
           />
 
-          {/* Halo pulse */}
-          <div className="absolute inset-[15%] -z-10 rounded-full animate-pulse-glow"
-               style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.6), transparent 70%)" }} />
+          {/* Halo pulse — teal */}
+          <div className="absolute inset-[12%] -z-10 rounded-full animate-pulse-glow"
+               style={{ background: "radial-gradient(closest-side, rgba(20,184,166,0.55), transparent 70%)" }} />
+
+          {/* Halo pulse — gold */}
+          <div className="absolute inset-[18%] -z-10 rounded-full animate-pulse-glow"
+               style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.55), transparent 70%)", animationDelay: "1.2s" }} />
 
           {/* Inner core glow */}
           <div className="absolute inset-[32%] -z-10 rounded-full"
                style={{
-                 background: "radial-gradient(closest-side, rgba(232,200,112,0.7), transparent 70%)",
+                 background: "radial-gradient(closest-side, rgba(94,234,212,0.65), transparent 70%)",
                  animation: "pulse-glow 4s ease-in-out infinite",
                  filter: "blur(30px)",
                }} />
 
-          {/* Floating particle dots around the brain */}
-          {[...Array(14)].map((_, i) => {
-            const angle = (i / 14) * Math.PI * 2;
+          {/* Floating particle dots — teal + gold alternating */}
+          {[...Array(16)].map((_, i) => {
+            const angle = (i / 16) * Math.PI * 2;
             const r = 40 + (i % 4) * 6;
             const left = 50 + Math.cos(angle) * r;
             const top = 50 + Math.sin(angle) * r;
+            const isTeal = i % 2 === 0;
             return (
               <span
                 key={i}
-                className="absolute h-1.5 w-1.5 rounded-full bg-gold"
+                className="absolute h-1.5 w-1.5 rounded-full"
                 style={{
                   left: `${left}%`,
                   top: `${top}%`,
-                  boxShadow: "0 0 14px var(--color-gold), 0 0 30px rgba(212,175,55,0.6)",
+                  background: isTeal ? "var(--color-teal-soft)" : "var(--color-gold)",
+                  boxShadow: isTeal
+                    ? "0 0 14px var(--color-teal), 0 0 30px rgba(20,184,166,0.7)"
+                    : "0 0 14px var(--color-gold), 0 0 30px rgba(212,175,55,0.6)",
                   animation: `synapse-spark ${3 + (i % 5) * 0.7}s ease-in-out ${i * 0.25}s infinite`,
                   transform: "translateZ(60px)",
                 }}
@@ -113,19 +124,23 @@ export function Hero() {
           })}
 
           {/* Drifting outer sparks */}
-          {[...Array(8)].map((_, i) => {
-            const angle = (i / 8) * Math.PI * 2 + 0.4;
+          {[...Array(10)].map((_, i) => {
+            const angle = (i / 10) * Math.PI * 2 + 0.4;
             const r = 58 + (i % 2) * 4;
             const left = 50 + Math.cos(angle) * r;
             const top = 50 + Math.sin(angle) * r;
+            const isTeal = i % 3 !== 0;
             return (
               <span
                 key={`out-${i}`}
-                className="absolute h-1 w-1 rounded-full bg-gold-soft"
+                className="absolute h-1 w-1 rounded-full"
                 style={{
                   left: `${left}%`,
                   top: `${top}%`,
-                  boxShadow: "0 0 10px var(--color-gold-soft)",
+                  background: isTeal ? "var(--color-teal-soft)" : "var(--color-gold-soft)",
+                  boxShadow: isTeal
+                    ? "0 0 12px var(--color-teal-soft)"
+                    : "0 0 10px var(--color-gold-soft)",
                   animation: `float-slow ${10 + (i % 3) * 2}s ease-in-out ${i * 0.5}s infinite`,
                 }}
               />
@@ -146,31 +161,48 @@ export function Hero() {
 
       {/* Foreground content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 md:px-10">
-        <div ref={textRef} className="will-change-transform md:max-w-[55%]">
-          <div className="eyebrow animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            Bridge Healing Alliance™ · Coming Soon
+        <div ref={textRef} className="will-change-transform md:max-w-[58%]">
+          <div className="eyebrow-teal animate-fade-up" style={{ animationDelay: "0.15s" }}>
+            Bridge Healing Alliance™ · A Transformation Movement
           </div>
 
           <h1
-            className="font-display mt-9 text-[clamp(2.6rem,7.6vw,7.4rem)] leading-[1.02] tracking-tight text-foreground animate-fade-up"
+            className="font-display mt-9 text-[clamp(2.5rem,7.4vw,7.2rem)] leading-[1.02] tracking-tight text-foreground animate-fade-up"
             style={{ animationDelay: "0.35s" }}
           >
-            The Premier <br />
-            <span className="text-gold-gradient italic">Neuro Wellness</span> <br />
-            Experience.
+            I rebuilt my life. <br />
+            Now I help others <br />
+            <span className="text-teal-gold-gradient italic">rise again.</span>
           </h1>
 
           <p
-            className="mt-10 max-w-lg text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
+            className="mt-10 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
             style={{ animationDelay: "0.6s" }}
           >
-            Where neuroscience, sound and intentional transformation meet —
-            a quiet sanctuary engineered for the elevated mind.
+            After a devastating physical challenge, I rebuilt my life from the ground up
+            — and turned that journey into a proven framework for personal transformation,
+            resilience and purpose-driven living. This is for the ones ready to rise.
           </p>
 
-          <div className="mt-12 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: "0.85s" }}>
-            <a href="#waitlist" className="btn-gold">Join the Experience <span aria-hidden>→</span></a>
-            <a href="#ecosystem" className="btn-ghost-gold">Explore the Ecosystem</a>
+          {/* Trust strip — answers "Who is this for? Why trust it?" instantly */}
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-[0.66rem] tracking-[0.3em] uppercase text-muted-foreground/85 animate-fade-up" style={{ animationDelay: "0.75s" }}>
+            <span className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--color-teal-soft)", boxShadow: "0 0 10px var(--color-teal)" }} />
+              Lived Experience
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--color-gold)", boxShadow: "0 0 10px var(--color-gold)" }} />
+              Proven Framework
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--color-teal-soft)", boxShadow: "0 0 10px var(--color-teal)" }} />
+              Global Movement
+            </span>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: "0.95s" }}>
+            <a href="#waitlist" className="btn-teal">Begin Your Transformation <span aria-hidden>→</span></a>
+            <a href="#ecosystem" className="btn-ghost-gold">Explore the Framework</a>
           </div>
         </div>
       </div>
@@ -178,8 +210,8 @@ export function Hero() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center gap-3 text-muted-foreground">
         <span className="text-[0.62rem] tracking-[0.5em] uppercase">Scroll</span>
-        <span className="relative block h-12 w-px bg-gradient-to-b from-gold/60 to-transparent">
-          <span className="absolute left-1/2 top-0 -translate-x-1/2 h-2 w-2 rounded-full bg-gold animate-scroll-hint shadow-[0_0_12px_var(--color-gold)]" />
+        <span className="relative block h-12 w-px" style={{ background: "linear-gradient(to bottom, var(--color-teal), transparent)" }}>
+          <span className="absolute left-1/2 top-0 -translate-x-1/2 h-2 w-2 rounded-full animate-scroll-hint" style={{ background: "var(--color-teal-soft)", boxShadow: "0 0 14px var(--color-teal)" }} />
         </span>
       </div>
     </section>
