@@ -75,6 +75,11 @@
   --gold-soft: #E8C870;
   --blue-calm: #3D4D63;
 
+  /* Signature teal — pulled from the brand logos */
+  --teal:       #14B8A6;
+  --teal-soft:  #5EEAD4;
+  --teal-deep:  #0E7C70;
+
   --primary: #D4AF37;
   --primary-foreground: #0F1115;
   --accent: #D4AF37;
