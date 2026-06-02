@@ -67,14 +67,15 @@ export function EcosystemOverview() {
     <section id="ecosystem" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mx-auto max-w-2xl text-center">
-          <div className="eyebrow justify-center">The Ecosystem</div>
+          <div className="eyebrow-teal justify-center">The Transformation Framework</div>
           <h2 className="font-display mt-7 text-[clamp(2.2rem,5vw,4.4rem)] leading-[1.05]">
-            One universe, <span className="italic text-gold-gradient">three doors</span>.
+            One framework, <span className="italic text-teal-gold-gradient">three doorways</span>.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-            A connected family of brands — a mission, a sound, and an experience —
-            woven into a single emotional landscape.
+            A movement, a sound and a method — three doorways into the same proven
+            path: rebuilding stronger lives through resilience, purpose and personal transformation.
           </p>
+          <div className="divider-teal mx-auto mt-10 w-40" />
         </div>
 
         <div className="mt-20 grid gap-8 md:grid-cols-3 md:gap-7">
