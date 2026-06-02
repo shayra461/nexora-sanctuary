@@ -12,7 +12,7 @@ export function Footer() {
                 boxShadow: "0 0 14px var(--color-teal), 0 0 22px rgba(212,175,55,0.55)",
               }}
             />
-            <span className="font-display text-xl tracking-[0.38em]">BRIDGE HEALING ALLIANCE</span>
+            <span className="font-display text-xl tracking-[0.38em]">NEUROSMOOTH ECOSYSTEM</span>
           </div>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
             A premium transformation movement — where lived experience becomes
