@@ -84,7 +84,7 @@ export function EcosystemOverview() {
             return (
               <article
                 key={b.name}
-                className="reveal group relative overflow-hidden rounded-2xl surface-card transition-all duration-700 hover:-translate-y-2"
+                className="reveal group relative overflow-hidden rounded-2xl luxe-card transition-all duration-700 hover:-translate-y-2"
                 style={{ transitionDelay: `${i * 0.12}s` }}
               >
                 {/* Glow halo on hover */}
