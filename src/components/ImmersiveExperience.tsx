@@ -7,25 +7,25 @@ type Card = {
   title: string;
   body: string;
   image: string;
-  accent: "gold" | "blue";
+  accent: "gold" | "teal";
 };
 
 const cards: Card[] = [
   {
     name: "NeuroSmooth Jazz™",
     tag: "Sound · Atmosphere",
-    title: "Decompress into a smoother frequency.",
-    body: "Cinematic, moody soundscapes that quiet the noise and invite you back into yourself.",
+    title: "Decompress. Reawaken. Rise.",
+    body: "Cinematic compositions that quiet the noise of the world and re-tune you to your own pulse of purpose.",
     image: jazzImg,
     accent: "gold",
   },
   {
     name: "NeuroSmooth Flow™",
-    tag: "Wellness · Regulation",
-    title: "A calm return to the body.",
-    body: "Guided nervous system protocols designed to ground, restore and gently regulate.",
+    tag: "Method · Resilience",
+    title: "Reclaim your strength.",
+    body: "Guided rituals that ground you, sharpen clarity and rebuild the inner architecture for the next chapter of your life.",
     image: flowImg,
-    accent: "blue",
+    accent: "teal",
   },
 ];
 
@@ -34,10 +34,11 @@ export function ImmersiveExperience() {
     <section id="experience" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mx-auto max-w-2xl text-center">
-          <div className="eyebrow justify-center">The Immersion</div>
+          <div className="eyebrow-teal justify-center">The Method</div>
           <h2 className="font-display mt-7 text-[clamp(2rem,5vw,4.2rem)] leading-[1.05]">
-            Two doors into <span className="italic text-gold-gradient">stillness</span>.
+            Two doors into <span className="italic text-teal-gold-gradient">your next chapter</span>.
           </h2>
+          <div className="divider-teal mx-auto mt-8 w-32" />
         </div>
 
         <div className="mt-20 grid gap-8 md:grid-cols-2">
