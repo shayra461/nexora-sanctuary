@@ -1,16 +1,22 @@
 export function Footer() {
   return (
     <footer className="relative overflow-hidden pt-20 pb-12">
-      <div className="divider-glow mx-auto max-w-7xl" />
+      <div className="divider-teal mx-auto max-w-7xl" />
       <div className="mx-auto mt-16 grid max-w-7xl gap-14 px-6 md:grid-cols-12 md:px-10">
         <div className="md:col-span-5">
           <div className="flex items-center gap-3">
-            <span className="inline-block h-2 w-2 rounded-full bg-gold shadow-[0_0_18px_var(--color-gold)]" />
+            <span
+              className="inline-block h-2 w-2 rounded-full"
+              style={{
+                background: "linear-gradient(135deg, var(--color-teal-soft), var(--color-gold))",
+                boxShadow: "0 0 14px var(--color-teal), 0 0 22px rgba(212,175,55,0.55)",
+              }}
+            />
             <span className="font-display text-xl tracking-[0.38em]">BRIDGE HEALING ALLIANCE</span>
           </div>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            A premium neuro wellness universe — where the science of the mind
-            meets the art of transformation.
+            A premium transformation movement — where lived experience becomes
+            a framework for resilience, reinvention and purpose-driven leadership.
           </p>
         </div>
 
