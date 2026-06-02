@@ -23,7 +23,7 @@ export function AmbientBackdrop() {
       vx: (Math.random() - 0.5) * 0.08,
       vy: -Math.random() * 0.18 - 0.03,
       a: Math.random() * 0.5 + 0.2,
-      blue: Math.random() > 0.88,
+      teal: Math.random() > 0.55,
     }));
 
     let raf = 0;
