@@ -36,11 +36,11 @@ export function AmbientBackdrop() {
         if (p.x < -10) p.x = w + 10;
         if (p.x > w + 10) p.x = -10;
         const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r * 9);
-        if (p.blue) {
-          grd.addColorStop(0, `rgba(120, 150, 200, ${p.a})`);
-          grd.addColorStop(1, "rgba(120, 150, 200, 0)");
+        if (p.teal) {
+          grd.addColorStop(0, `rgba(94, 234, 212, ${p.a})`);
+          grd.addColorStop(1, "rgba(94, 234, 212, 0)");
         } else {
-          grd.addColorStop(0, `rgba(212, 175, 55, ${p.a})`);
+          grd.addColorStop(0, `rgba(232, 200, 112, ${p.a})`);
           grd.addColorStop(1, "rgba(212, 175, 55, 0)");
         }
         ctx.fillStyle = grd;
