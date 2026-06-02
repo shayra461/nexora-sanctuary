@@ -12,7 +12,7 @@ export function Footer() {
                 boxShadow: "0 0 14px var(--color-teal), 0 0 22px rgba(212,175,55,0.55)",
               }}
             />
-            <span className="font-display text-xl tracking-[0.38em]">BRIDGE HEALING ALLIANCE</span>
+            <span className="font-display text-xl tracking-[0.38em]">NEUROSMOOTH ECOSYSTEM</span>
           </div>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
             A premium transformation movement — where lived experience becomes
@@ -23,7 +23,7 @@ export function Footer() {
         <div className="md:col-span-3">
           <div className="text-[0.65rem] tracking-[0.4em] uppercase text-gold/80">Ecosystem</div>
           <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-            <li><a className="transition-colors hover:text-gold" href="#ecosystem">Bridge Healing Alliance</a></li>
+            <li><a className="transition-colors hover:text-gold" href="#ecosystem">NeuroSmooth Ecosystem</a></li>
             <li><a className="transition-colors hover:text-gold" href="#experience">NeuroSmooth Jazz</a></li>
             <li><a className="transition-colors hover:text-gold" href="#experience">NeuroSmooth Flow</a></li>
             <li><a className="transition-colors hover:text-gold" href="#science">Science</a></li>
@@ -54,7 +54,7 @@ export function Footer() {
 
       <div className="divider-glow mx-auto mt-16 max-w-7xl" />
       <div className="mx-auto mt-8 flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-[0.7rem] tracking-[0.3em] uppercase text-muted-foreground/70 md:flex-row md:px-10">
-        <span>© {new Date().getFullYear()} Bridge Healing Alliance · All rights reserved</span>
+        <span>© {new Date().getFullYear()} NeuroSmooth Ecosystem · All rights reserved</span>
         <span>Crafted with intention</span>
       </div>
     </footer>
