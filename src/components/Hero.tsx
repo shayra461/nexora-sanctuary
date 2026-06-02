@@ -161,31 +161,48 @@ export function Hero() {
 
       {/* Foreground content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 md:px-10">
-        <div ref={textRef} className="will-change-transform md:max-w-[55%]">
-          <div className="eyebrow animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            Bridge Healing Alliance™ · Coming Soon
+        <div ref={textRef} className="will-change-transform md:max-w-[58%]">
+          <div className="eyebrow-teal animate-fade-up" style={{ animationDelay: "0.15s" }}>
+            Bridge Healing Alliance™ · A Transformation Movement
           </div>
 
           <h1
-            className="font-display mt-9 text-[clamp(2.6rem,7.6vw,7.4rem)] leading-[1.02] tracking-tight text-foreground animate-fade-up"
+            className="font-display mt-9 text-[clamp(2.5rem,7.4vw,7.2rem)] leading-[1.02] tracking-tight text-foreground animate-fade-up"
             style={{ animationDelay: "0.35s" }}
           >
-            The Premier <br />
-            <span className="text-gold-gradient italic">Neuro Wellness</span> <br />
-            Experience.
+            I rebuilt my life. <br />
+            Now I help others <br />
+            <span className="text-teal-gold-gradient italic">rise again.</span>
           </h1>
 
           <p
-            className="mt-10 max-w-lg text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
+            className="mt-10 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
             style={{ animationDelay: "0.6s" }}
           >
-            Where neuroscience, sound and intentional transformation meet —
-            a quiet sanctuary engineered for the elevated mind.
+            After a devastating physical challenge, I rebuilt my life from the ground up
+            — and turned that journey into a proven framework for personal transformation,
+            resilience and purpose-driven living. This is for the ones ready to rise.
           </p>
 
-          <div className="mt-12 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: "0.85s" }}>
-            <a href="#waitlist" className="btn-gold">Join the Experience <span aria-hidden>→</span></a>
-            <a href="#ecosystem" className="btn-ghost-gold">Explore the Ecosystem</a>
+          {/* Trust strip — answers "Who is this for? Why trust it?" instantly */}
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-[0.66rem] tracking-[0.3em] uppercase text-muted-foreground/85 animate-fade-up" style={{ animationDelay: "0.75s" }}>
+            <span className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--color-teal-soft)", boxShadow: "0 0 10px var(--color-teal)" }} />
+              Lived Experience
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--color-gold)", boxShadow: "0 0 10px var(--color-gold)" }} />
+              Proven Framework
+            </span>
+            <span className="flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--color-teal-soft)", boxShadow: "0 0 10px var(--color-teal)" }} />
+              Global Movement
+            </span>
+          </div>
+
+          <div className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: "0.95s" }}>
+            <a href="#waitlist" className="btn-teal">Begin Your Transformation <span aria-hidden>→</span></a>
+            <a href="#ecosystem" className="btn-ghost-gold">Explore the Framework</a>
           </div>
         </div>
       </div>
@@ -193,8 +210,8 @@ export function Hero() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 flex flex-col items-center gap-3 text-muted-foreground">
         <span className="text-[0.62rem] tracking-[0.5em] uppercase">Scroll</span>
-        <span className="relative block h-12 w-px bg-gradient-to-b from-gold/60 to-transparent">
-          <span className="absolute left-1/2 top-0 -translate-x-1/2 h-2 w-2 rounded-full bg-gold animate-scroll-hint shadow-[0_0_12px_var(--color-gold)]" />
+        <span className="relative block h-12 w-px" style={{ background: "linear-gradient(to bottom, var(--color-teal), transparent)" }}>
+          <span className="absolute left-1/2 top-0 -translate-x-1/2 h-2 w-2 rounded-full animate-scroll-hint" style={{ background: "var(--color-teal-soft)", boxShadow: "0 0 14px var(--color-teal)" }} />
         </span>
       </div>
     </section>
