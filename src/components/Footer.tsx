@@ -23,7 +23,7 @@ export function Footer() {
         <div className="md:col-span-3">
           <div className="text-[0.65rem] tracking-[0.4em] uppercase text-gold/80">Ecosystem</div>
           <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-            <li><a className="transition-colors hover:text-gold" href="#ecosystem">Bridge Healing Alliance</a></li>
+            <li><a className="transition-colors hover:text-gold" href="#ecosystem">NeuroSmooth Ecosystem</a></li>
             <li><a className="transition-colors hover:text-gold" href="#experience">NeuroSmooth Jazz</a></li>
             <li><a className="transition-colors hover:text-gold" href="#experience">NeuroSmooth Flow</a></li>
             <li><a className="transition-colors hover:text-gold" href="#science">Science</a></li>
