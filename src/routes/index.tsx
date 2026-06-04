@@ -37,9 +37,9 @@ function Index() {
         <Nav />
         <main>
           <Hero />
-          <EcosystemOverview />
-          <ImmersiveExperience />
           <ScienceSection />
+          <ImmersiveExperience />
+          <EcosystemOverview />
           <Waitlist />
         </main>
         <Footer />
