@@ -166,9 +166,18 @@ export function Hero() {
             Bridge Healing Alliance™ · A Transformation Movement
           </div>
 
+          {/* Brief summary — top-of-page clarity */}
+          <p
+            className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/90 md:text-xl animate-fade-up"
+            style={{ animationDelay: "0.25s" }}
+          >
+            I lived through a devastating physical challenge, rebuilt my life,
+            and created a framework to help others do the same.
+          </p>
+
           <h1
-            className="font-display mt-9 text-[clamp(2.5rem,7.4vw,7.2rem)] leading-[1.02] tracking-tight text-foreground animate-fade-up"
-            style={{ animationDelay: "0.35s" }}
+            className="font-display mt-7 text-[clamp(2.5rem,7.4vw,7.2rem)] leading-[1.02] tracking-tight text-foreground animate-fade-up"
+            style={{ animationDelay: "0.4s" }}
           >
             I rebuilt my life. <br />
             Now I help others <br />
@@ -176,13 +185,15 @@ export function Hero() {
           </h1>
 
           <p
-            className="mt-10 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
+            className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
             style={{ animationDelay: "0.6s" }}
           >
-            After a devastating physical challenge, I rebuilt my life from the ground up
-            — and turned that journey into a proven framework for personal transformation,
-            resilience and purpose-driven living. This is for the ones ready to rise.
+            Born from a journey of resilience and recovery, the Bridge Healing
+            Alliance and the NeuroSmooth Ecosystem were created to help people
+            reconnect with calm, clarity, and possibility — and step into who
+            they were meant to become.
           </p>
+
 
           {/* Trust strip — answers "Who is this for? Why trust it?" instantly */}
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-[0.66rem] tracking-[0.3em] uppercase text-muted-foreground/85 animate-fade-up" style={{ animationDelay: "0.75s" }}>

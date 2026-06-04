@@ -35,7 +35,7 @@ const chapters = [
   {
     eyebrow: "Chapter IV",
     title: "Transformation",
-    body: "The architecture of the mind quietly rearranges itself.",
+    body: "Designed around how the mind heals, adapts, and thrives.",
     hue: "mixed" as const,
     image: imgTransformation,
     contain: true,
