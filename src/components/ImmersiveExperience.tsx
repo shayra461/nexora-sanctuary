@@ -39,7 +39,7 @@ export function ImmersiveExperience() {
             Rebuild strength. <span className="italic text-teal-gold-gradient">Reclaim possibility.</span>
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-            A transformational methodology for rebuilding strength, resilience,
+            A rebuilding approach for reclaiming strength, resilience,
             purpose, and possibility after life's greatest challenges.
           </p>
           <div className="divider-teal mx-auto mt-8 w-32" />

@@ -78,11 +78,11 @@ export function ScienceSection() {
               decision to keep moving forward one step at a time.
             </p>
             <p>
-              That experience transformed my perspective and inspired a greater
-              mission: to create meaningful resources, transformative
+              That experience changed my perspective and inspired a greater
+              mission: to create meaningful resources, immersive
               experiences, and a supportive community for individuals whose
-              lives have been interrupted by adversity, injury, illness,
-              trauma, or unexpected setbacks.
+              lives have been interrupted by adversity, setbacks, health
+              challenges, or unexpected turns.
             </p>
             <p className="text-foreground/90">
               From that vision,{" "}

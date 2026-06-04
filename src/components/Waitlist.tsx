@@ -20,7 +20,7 @@ export function Waitlist() {
           Step into the <span className="italic text-teal-gold-gradient">next version of you</span>.
         </h2>
         <p className="reveal mt-8 text-base text-muted-foreground md:text-lg" style={{ transitionDelay: "0.3s" }}>
-          Join the founding circle for early access to the framework, intimate
+          Join the founding circle for early access to the vision, intimate
           updates from the journey, and an invitation into a global movement of
           leaders rebuilding stronger lives.
         </p>

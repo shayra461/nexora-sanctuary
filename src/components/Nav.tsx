@@ -1,6 +1,6 @@
 export function Nav() {
   const links = [
-    { href: "#ecosystem", label: "The Framework" },
+    { href: "#ecosystem", label: "The Vision" },
     { href: "#experience", label: "The Method" },
     { href: "#science", label: "The Story" },
   ];

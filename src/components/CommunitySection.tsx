@@ -24,7 +24,7 @@ export function CommunitySection() {
               </h2>
               <p className="mt-7 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
                 A constellation of seekers, healers and creators — connected
-                through shared transformation and a quiet commitment to grow,
+                through shared rebuilding and a quiet commitment to grow,
                 heal and elevate together.
               </p>
             </div>
