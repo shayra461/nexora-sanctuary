@@ -23,7 +23,7 @@ const brands: Brand[] = [
   {
     name: "Bridge Healing Alliance™",
     tag: "The Movement",
-    role: "A global transformation alliance",
+    role: "A global rebuilding alliance",
     body: "A movement built on lived experience — guiding leaders, survivors and seekers to rebuild stronger lives.",
     cta: "Join the Movement",
     href: "#waitlist",
@@ -45,8 +45,8 @@ const brands: Brand[] = [
   {
     name: "NeuroSmooth Flow™",
     tag: "The Method",
-    role: "The transformation framework",
-    body: "Guided rituals and protocols that help you reclaim clarity, ground your strength and step into the next version of you.",
+    role: "The rebuilding method",
+    body: "Guided rituals and practices that help you reclaim clarity, ground your strength and step into the next version of you.",
     cta: "Find Your Flow",
     href: "#experience",
     image: flowImg,
@@ -69,12 +69,12 @@ export function EcosystemOverview() {
         <div className="reveal mx-auto max-w-2xl text-center">
           <div className="eyebrow-teal justify-center">NeuroSmooth Ecosystem</div>
           <h2 className="font-display mt-7 text-[clamp(2.2rem,5vw,4.4rem)] leading-[1.05]">
-            The <span className="italic text-teal-gold-gradient">experience platform</span>.
+            One <span className="italic text-teal-gold-gradient">vision</span>. Three doors.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-            A movement, a sound, and a method — three doorways into the same
+            A movement, a sound, and a method — each a doorway into the same
             proven path: rebuilding stronger lives through resilience, purpose,
-            and personal transformation.
+            and personal rebuilding.
           </p>
           <div className="divider-teal mx-auto mt-10 w-40" />
         </div>

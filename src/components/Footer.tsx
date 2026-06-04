@@ -15,8 +15,8 @@ export function Footer() {
             <span className="font-display text-xl tracking-[0.38em]">NEUROSMOOTH ECOSYSTEM</span>
           </div>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
-            A premium transformation movement — where lived experience becomes
-            a framework for resilience, reinvention and purpose-driven leadership.
+            A premium rebuilding movement — where lived experience becomes
+            a vision for resilience, reinvention and purpose-driven leadership.
           </p>
         </div>
 

@@ -14,14 +14,14 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Bridge Healing Alliance — Personal Transformation Movement" },
+      { title: "Bridge Healing Alliance — Personal Rebuilding Movement" },
       {
         name: "description",
         content:
-          "From a life-altering challenge to a proven transformation framework — Bridge Healing Alliance is a premium movement guiding others to rebuild, rise and lead through lived experience.",
+          "From a life-altering challenge to a proven rebuilding path — Bridge Healing Alliance is a premium movement guiding others to rebuild, rise and lead through lived experience.",
       },
-      { property: "og:title", content: "Bridge Healing Alliance — Personal Transformation Movement" },
-      { property: "og:description", content: "Resilience. Reinvention. A luxury transformation framework built from lived experience." },
+      { property: "og:title", content: "Bridge Healing Alliance — Personal Rebuilding Movement" },
+      { property: "og:description", content: "Resilience. Reinvention. A luxury rebuilding path built from lived experience." },
     ],
   }),
 });

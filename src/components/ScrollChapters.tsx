@@ -19,7 +19,7 @@ const chapters = [
   {
     eyebrow: "Chapter II",
     title: "Calmness",
-    body: "Let the nervous system soften into the design of the room.",
+    body: "Let your whole self soften into the stillness of the moment.",
     hue: "amber" as const,
     image: imgCalmness,
     contain: false,
@@ -34,7 +34,7 @@ const chapters = [
   },
   {
     eyebrow: "Chapter IV",
-    title: "Transformation",
+    title: "Rising",
     body: "Designed around how the mind heals, adapts, and thrives.",
     hue: "mixed" as const,
     image: imgTransformation,
