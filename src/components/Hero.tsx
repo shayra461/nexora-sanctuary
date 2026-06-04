@@ -163,7 +163,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 md:px-10">
         <div ref={textRef} className="will-change-transform md:max-w-[58%]">
           <div className="eyebrow-teal animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            Bridge Healing Alliance™ · A Transformation Movement
+            Bridge Healing Alliance™ · A Rebuilding Movement
           </div>
 
           {/* Brief summary — top-of-page clarity */}
@@ -172,7 +172,7 @@ export function Hero() {
             style={{ animationDelay: "0.25s" }}
           >
             I lived through a devastating physical challenge, rebuilt my life,
-            and created a framework to help others do the same.
+            and created a path to help others do the same.
           </p>
 
           <h1
@@ -203,7 +203,7 @@ export function Hero() {
             </span>
             <span className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--color-gold)", boxShadow: "0 0 10px var(--color-gold)" }} />
-              Proven Framework
+              Proven Path
             </span>
             <span className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--color-teal-soft)", boxShadow: "0 0 10px var(--color-teal)" }} />
@@ -212,8 +212,8 @@ export function Hero() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: "0.95s" }}>
-            <a href="#waitlist" className="btn-teal">Begin Your Transformation <span aria-hidden>→</span></a>
-            <a href="#ecosystem" className="btn-ghost-gold">Explore the Framework</a>
+            <a href="#waitlist" className="btn-teal">Begin Your Journey <span aria-hidden>→</span></a>
+            <a href="#ecosystem" className="btn-ghost-gold">Explore the Vision</a>
           </div>
         </div>
       </div>
