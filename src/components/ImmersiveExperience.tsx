@@ -33,11 +33,15 @@ export function ImmersiveExperience() {
   return (
     <section id="experience" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="reveal mx-auto max-w-2xl text-center">
-          <div className="eyebrow-teal justify-center">The Method</div>
+        <div className="reveal mx-auto max-w-3xl text-center">
+          <div className="eyebrow-teal justify-center">The Bridge Healing Method</div>
           <h2 className="font-display mt-7 text-[clamp(2rem,5vw,4.2rem)] leading-[1.05]">
-            Two doors into <span className="italic text-teal-gold-gradient">your next chapter</span>.
+            Rebuild strength. <span className="italic text-teal-gold-gradient">Reclaim possibility.</span>
           </h2>
+          <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
+            A transformational methodology for rebuilding strength, resilience,
+            purpose, and possibility after life's greatest challenges.
+          </p>
           <div className="divider-teal mx-auto mt-8 w-32" />
         </div>
 

@@ -1,11 +1,5 @@
 import scienceImg from "@/assets/science-architecture.jpg";
 
-const bullets = [
-  "A framework forged through lived transformation",
-  "Rituals and practices that rebuild strength and clarity",
-  "Designed for leaders, creators and seekers ready to rise",
-];
-
 export function ScienceSection() {
   return (
     <section id="science" className="relative py-24 md:py-32">
@@ -22,11 +16,11 @@ export function ScienceSection() {
           >
             <img
               src={scienceImg}
-              alt="Architecture of personal transformation"
+              alt="Founder's journey of resilience and renewal"
               loading="lazy"
               width={1536}
               height={1536}
-              className="h-[60vh] w-full object-cover"
+              className="h-[72vh] w-full object-cover"
             />
             <div
               className="absolute inset-0"
@@ -36,10 +30,9 @@ export function ScienceSection() {
               }}
             />
             <div className="absolute left-6 top-6 font-display text-xs tracking-[0.4em] uppercase text-teal-soft">
-              The Story
+              Founder's Story
             </div>
           </div>
-          {/* dual halo */}
           <div
             className="pointer-events-none absolute -inset-12 -z-10 rounded-full opacity-70 blur-3xl"
             style={{
@@ -58,35 +51,61 @@ export function ScienceSection() {
 
         {/* Text */}
         <div className="reveal" style={{ transitionDelay: "0.15s" }}>
-          <div className="eyebrow-teal">Leadership Through Experience</div>
+          <div className="eyebrow-teal">Founder's Story</div>
           <h2 className="font-display mt-7 text-[clamp(2rem,4.6vw,3.8rem)] leading-[1.05] text-foreground">
-            A life rebuilt —{" "}
-            <span className="italic text-teal-gold-gradient">a framework for those ready to rise.</span>
+            From a life-altering crisis —{" "}
+            <span className="italic text-teal-gold-gradient">
+              a movement was born.
+            </span>
           </h2>
-          <p className="mt-8 max-w-lg text-base leading-relaxed text-muted-foreground md:text-[1.05rem]">
-            What started as a personal reckoning became a way of life — and then a
-            method. Today, that framework guides others through reinvention,
-            resilience and purpose-driven living.
-          </p>
-          <ul className="mt-12 space-y-5">
-            {bullets.map((b, i) => (
-              <li
-                key={b}
-                className="flex items-start gap-4 text-sm text-foreground/85 md:text-base"
-              >
-                <span
-                  className="mt-2.5 inline-block h-px w-9"
-                  style={{
-                    background:
-                      i % 2 === 0
-                        ? "linear-gradient(90deg, var(--color-teal), transparent)"
-                        : "linear-gradient(90deg, var(--color-gold), transparent)",
-                  }}
-                />
-                <span className="tracking-wide">{b}</span>
-              </li>
-            ))}
-          </ul>
+
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground md:text-[1.05rem]">
+            <p>
+              Bridge Healing Alliance was born from one of the most challenging
+              seasons of my life.
+            </p>
+            <p>
+              After facing a life-altering health crisis that disrupted nearly
+              every aspect of my world, I discovered that healing is about far
+              more than physical recovery. True healing is the process of
+              rebuilding confidence, restoring purpose, reclaiming identity,
+              and finding the courage to move forward when the path ahead is
+              uncertain.
+            </p>
+            <p>
+              Throughout my journey, I learned that progress is rarely linear.
+              It is built through resilience, faith, perseverance, and the
+              decision to keep moving forward one step at a time.
+            </p>
+            <p>
+              That experience transformed my perspective and inspired a greater
+              mission: to create meaningful resources, transformative
+              experiences, and a supportive community for individuals whose
+              lives have been interrupted by adversity, injury, illness,
+              trauma, or unexpected setbacks.
+            </p>
+            <p className="text-foreground/90">
+              From that vision,{" "}
+              <span className="text-teal-gold-gradient italic">
+                Bridge Healing Alliance
+              </span>{" "}
+              was created.
+            </p>
+            <p>
+              Together with the{" "}
+              <span className="text-foreground/90">NeuroSmooth Ecosystem</span>{" "}
+              and the{" "}
+              <span className="text-foreground/90">Bridge Healing Method</span>,
+              our purpose is to help people reconnect with their strength,
+              rediscover their purpose, and embrace the possibility of what
+              comes next.
+            </p>
+            <p className="font-display text-lg italic text-foreground/95 md:text-xl">
+              Because healing is not simply about returning to who you were.
+              It is about becoming who you were meant to be.
+            </p>
+          </div>
+
           <div className="divider-teal mt-12 w-48" />
         </div>
       </div>
