@@ -29,7 +29,7 @@ export function ScienceSection() {
                   "linear-gradient(180deg, transparent 40%, rgba(15,17,21,0.7) 100%), radial-gradient(80% 60% at 20% 0%, rgba(20,184,166,0.18), transparent 60%)",
               }}
             />
-            <div className="absolute left-6 top-6 font-display text-xs tracking-[0.4em] uppercase text-teal-soft">
+            <div className="absolute left-6 top-6 font-display text-sm md:text-base tracking-[0.45em] uppercase text-teal-soft">
               Founder's Story
             </div>
           </div>
