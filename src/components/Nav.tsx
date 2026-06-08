@@ -13,8 +13,8 @@ export function Nav() {
           <img
             src={logoAsset.url}
             alt="Bridge Healing Alliance"
-            className="h-16 w-auto md:h-20"
-            style={{ filter: "drop-shadow(0 0 24px rgba(20,184,166,0.5)) drop-shadow(0 0 32px rgba(212,175,55,0.4))" }}
+            className="h-24 w-auto md:h-32"
+            style={{ filter: "drop-shadow(0 0 24px rgba(20,184,166,0.55)) drop-shadow(0 0 32px rgba(212,175,55,0.45))" }}
           />
         </a>
         <nav className="hidden items-center gap-9 text-[0.7rem] tracking-[0.3em] uppercase text-muted-foreground md:flex">
