@@ -1,19 +1,17 @@
+import logoAsset from "@/assets/logo-bridge.png.asset.json";
+
 export function Footer() {
   return (
     <footer className="relative overflow-hidden pt-20 pb-12">
       <div className="divider-teal mx-auto max-w-7xl" />
       <div className="mx-auto mt-16 grid max-w-7xl gap-14 px-6 md:grid-cols-12 md:px-10">
         <div className="md:col-span-5">
-          <div className="flex items-center gap-3">
-            <span
-              className="inline-block h-2 w-2 rounded-full"
-              style={{
-                background: "linear-gradient(135deg, var(--color-teal-soft), var(--color-gold))",
-                boxShadow: "0 0 14px var(--color-teal), 0 0 22px rgba(212,175,55,0.55)",
-              }}
-            />
-            <span className="font-display text-xl tracking-[0.38em]">NEUROSMOOTH ECOSYSTEM</span>
-          </div>
+          <img
+            src={logoAsset.url}
+            alt="Bridge Healing Alliance"
+            className="h-20 w-auto md:h-24"
+            style={{ filter: "drop-shadow(0 0 22px rgba(20,184,166,0.35)) drop-shadow(0 0 26px rgba(212,175,55,0.25))" }}
+          />
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
             A premium rebuilding movement — where lived experience becomes
             a vision for resilience, reinvention and purpose-driven leadership.
