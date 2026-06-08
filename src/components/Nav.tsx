@@ -1,5 +1,9 @@
 import logoAsset from "@/assets/logo-bridge.png.asset.json";
 
+const logoUrl = logoAsset.url.startsWith("http")
+  ? logoAsset.url
+  : `https://project--c4bba4a8-dfa6-400d-9242-fabd5b306edf-dev.lovable.app${logoAsset.url}`;
+
 export function Nav() {
   const links = [
     { href: "#ecosystem", label: "The Vision" },
@@ -11,7 +15,7 @@ export function Nav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 md:py-5">
         <a href="#top" className="flex items-center gap-3">
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt="Bridge Healing Alliance"
             className="h-24 w-auto md:h-32"
             style={{ filter: "drop-shadow(0 0 24px rgba(20,184,166,0.55)) drop-shadow(0 0 32px rgba(212,175,55,0.45))" }}
