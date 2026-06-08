@@ -104,6 +104,9 @@ export function ScienceSection() {
               Because healing is not simply about returning to who you were.
               It is about becoming who you were meant to be.
             </p>
+            <p className="mt-4 text-sm tracking-[0.25em] uppercase text-teal-soft">
+              — LBJ · Founder, Bridge Healing Alliance
+            </p>
           </div>
 
           <div className="divider-teal mt-12 w-48" />
