@@ -51,7 +51,7 @@ export function ScienceSection() {
 
         {/* Text */}
         <div className="reveal" style={{ transitionDelay: "0.15s" }}>
-          <div className="eyebrow-teal">Founder's Story</div>
+          <div className="eyebrow-teal text-base md:text-lg tracking-[0.45em]">Founder's Story</div>
           <h2 className="font-display mt-7 text-[clamp(2rem,4.6vw,3.8rem)] leading-[1.05] text-foreground">
             From a life-altering crisis —{" "}
             <span className="italic text-teal-gold-gradient">
