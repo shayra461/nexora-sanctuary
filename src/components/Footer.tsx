@@ -9,8 +9,8 @@ export function Footer() {
           <img
             src={logoAsset.url}
             alt="Bridge Healing Alliance"
-            className="h-24 w-auto md:h-32"
-            style={{ filter: "drop-shadow(0 0 30px rgba(20,184,166,0.5)) drop-shadow(0 0 36px rgba(212,175,55,0.4))" }}
+            className="h-36 w-auto md:h-48"
+            style={{ filter: "drop-shadow(0 0 30px rgba(20,184,166,0.55)) drop-shadow(0 0 36px rgba(212,175,55,0.45))" }}
           />
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
             A premium rebuilding movement — where lived experience becomes
