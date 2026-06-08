@@ -1,5 +1,9 @@
 import logoAsset from "@/assets/logo-bridge.png.asset.json";
 
+const logoUrl = logoAsset.url.startsWith("http")
+  ? logoAsset.url
+  : `https://project--c4bba4a8-dfa6-400d-9242-fabd5b306edf-dev.lovable.app${logoAsset.url}`;
+
 export function Footer() {
   return (
     <footer className="relative overflow-hidden pt-20 pb-12">
@@ -7,7 +11,7 @@ export function Footer() {
       <div className="mx-auto mt-16 grid max-w-7xl gap-14 px-6 md:grid-cols-12 md:px-10">
         <div className="md:col-span-5">
           <img
-            src={logoAsset.url}
+            src={logoUrl}
             alt="Bridge Healing Alliance"
             className="h-36 w-auto md:h-48"
             style={{ filter: "drop-shadow(0 0 30px rgba(20,184,166,0.55)) drop-shadow(0 0 36px rgba(212,175,55,0.45))" }}
