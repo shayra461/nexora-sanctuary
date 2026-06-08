@@ -22,8 +22,8 @@ export function Hero() {
           ringRef.current.style.transform = `translate3d(0, ${y * -0.04}px, 0) rotate(${y * 0.04}deg)`;
         }
         if (textRef.current) {
-          textRef.current.style.transform = `translate3d(0, ${y * 0.22}px, 0)`;
-          textRef.current.style.opacity = `${Math.max(0, 1 - y / 700)}`;
+          textRef.current.style.transform = `translate3d(0, 0, 0)`;
+          textRef.current.style.opacity = `1`;
         }
       });
     };
