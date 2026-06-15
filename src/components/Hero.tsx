@@ -166,37 +166,39 @@ export function Hero() {
             Bridge Healing Alliance™ · A Rebuilding Movement
           </div>
 
-          {/* Brief summary — top-of-page clarity */}
-          <p
-            className="mt-6 max-w-2xl text-lg leading-relaxed text-foreground/90 md:text-xl animate-fade-up"
-            style={{ animationDelay: "0.25s" }}
-          >
-            I lived through a devastating physical challenge, rebuilt my life,
-            and created a path to help others do the same.
-          </p>
-
           <h1
             className="font-display mt-7 text-[clamp(2.5rem,7.4vw,7.2rem)] leading-[1.02] tracking-tight text-foreground animate-fade-up"
             style={{ animationDelay: "0.4s" }}
           >
-            I rebuilt my life. <br />
-            Now I help others <br />
-            <span className="text-teal-gold-gradient italic">rise again.</span>
+            [FINAL HEADLINE — <span className="text-teal-gold-gradient italic">to be provided by founder</span>]
           </h1>
 
+          {/* Supporting line directly under headline */}
           <p
-            className="mt-8 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
+            className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/85 md:text-lg animate-fade-up"
+            style={{ animationDelay: "0.5s" }}
+          >
+            Helping people rebuild strength, confidence, and purpose after
+            life's greatest challenges.
+          </p>
+
+          <p
+            className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
             style={{ animationDelay: "0.6s" }}
           >
-            Born from a journey of resilience and recovery, the Bridge Healing
-            Alliance and the NeuroSmooth Ecosystem were created to help people
-            reconnect with calm, clarity, and possibility — and step into who
-            they were meant to become.
+            [FINAL TAGLINE — to be provided by founder]
+          </p>
+
+          <p
+            className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base animate-fade-up"
+            style={{ animationDelay: "0.7s" }}
+          >
+            [FINAL BODY COPY — to be provided by founder]
           </p>
 
 
           {/* Trust strip — answers "Who is this for? Why trust it?" instantly */}
-          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-[0.66rem] tracking-[0.3em] uppercase text-muted-foreground/85 animate-fade-up" style={{ animationDelay: "0.75s" }}>
+          <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-[0.66rem] tracking-[0.3em] uppercase text-muted-foreground/85 animate-fade-up" style={{ animationDelay: "0.8s" }}>
             <span className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--color-teal-soft)", boxShadow: "0 0 10px var(--color-teal)" }} />
               Lived Experience
@@ -212,8 +214,8 @@ export function Hero() {
           </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: "0.95s" }}>
-            <a href="#waitlist" className="btn-teal">Begin Your Journey <span aria-hidden>→</span></a>
-            <a href="#ecosystem" className="btn-ghost-gold">Explore the Vision</a>
+            <a href="#ecosystem" className="btn-teal">Begin Your Journey <span aria-hidden>→</span></a>
+            <a href="#founder-story" className="btn-ghost-gold">Read the Founder Story</a>
           </div>
         </div>
       </div>

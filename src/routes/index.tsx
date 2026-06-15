@@ -8,6 +8,7 @@ import { ImmersiveExperience } from "@/components/ImmersiveExperience";
 import { CommunitySection } from "@/components/CommunitySection";
 import { Waitlist } from "@/components/Waitlist";
 import { Footer } from "@/components/Footer";
+import { MissionStatement } from "@/components/MissionStatement";
 import { useRevealOnScroll } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
@@ -37,9 +38,10 @@ function Index() {
         <Nav />
         <main>
           <Hero />
+          <MissionStatement />
+          <EcosystemOverview />
           <ScienceSection />
           <ImmersiveExperience />
-          <EcosystemOverview />
           <Waitlist />
         </main>
         <Footer />

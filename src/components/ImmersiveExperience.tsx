@@ -23,7 +23,7 @@ const cards: Card[] = [
     name: "NeuroSmooth Flow™",
     tag: "Method · Resilience",
     title: "Reclaim your strength.",
-    body: "Guided rituals designed around how the mind heals, adapts, and thrives — so you can rebuild clarity and step into the next chapter of your life.",
+    body: "A guided rebuilding path to help you reclaim clarity and step into your next chapter — one grounded step at a time.",
     image: flowImg,
     accent: "teal",
   },

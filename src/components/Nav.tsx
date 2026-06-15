@@ -8,7 +8,7 @@ export function Nav() {
   const links = [
     { href: "#ecosystem", label: "The Vision" },
     { href: "#experience", label: "The Method" },
-    { href: "#science", label: "The Story" },
+    { href: "#founder-story", label: "Founder Story" },
   ];
   return (
     <header className="fixed top-0 left-0 right-0 z-50 animate-fade-in">

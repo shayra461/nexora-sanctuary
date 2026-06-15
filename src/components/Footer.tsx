@@ -23,13 +23,13 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-3">
-          <div className="text-[0.65rem] tracking-[0.4em] uppercase text-gold/80">Ecosystem</div>
+          <div className="text-[0.65rem] tracking-[0.4em] uppercase text-gold/80">Bridge Healing Alliance</div>
           <ul className="mt-5 space-y-3 text-sm text-muted-foreground">
-            <li><a className="transition-colors hover:text-gold" href="#ecosystem">NeuroSmooth Ecosystem</a></li>
-            <li><a className="transition-colors hover:text-gold" href="#experience">NeuroSmooth Jazz</a></li>
-            <li><a className="transition-colors hover:text-gold" href="#experience">NeuroSmooth Flow</a></li>
-            <li><a className="transition-colors hover:text-gold" href="#science">Science</a></li>
-            <li><a className="transition-colors hover:text-gold" href="#community">Community</a></li>
+            <li><a className="transition-colors hover:text-gold" href="#ecosystem">The Vision</a></li>
+            <li><a className="transition-colors hover:text-gold" href="#experience">NeuroSmooth Jazz™</a></li>
+            <li><a className="transition-colors hover:text-gold" href="#experience">NeuroSmooth Flow™</a></li>
+            <li><a className="transition-colors hover:text-gold" href="#founder-story">Founder Story</a></li>
+            <li><a className="transition-colors hover:text-gold" href="#waitlist">Join the Movement</a></li>
           </ul>
         </div>
 
@@ -56,7 +56,7 @@ export function Footer() {
 
       <div className="divider-glow mx-auto mt-16 max-w-7xl" />
       <div className="mx-auto mt-8 flex max-w-7xl flex-col items-center justify-between gap-4 px-6 text-[0.7rem] tracking-[0.3em] uppercase text-muted-foreground/70 md:flex-row md:px-10">
-        <span>© {new Date().getFullYear()} NeuroSmooth Ecosystem · All rights reserved</span>
+        <span>© {new Date().getFullYear()} Bridge Healing Alliance™ · All rights reserved</span>
         <span>Crafted with intention</span>
       </div>
     </footer>
