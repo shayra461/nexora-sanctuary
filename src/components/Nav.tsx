@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import logoAsset from "@/assets/logo-bridge.png.asset.json";
 
 const logoUrl = logoAsset.url.startsWith("http")
@@ -10,8 +11,28 @@ export function Nav() {
     { href: "#experience", label: "The Method" },
     { href: "#founder-story", label: "Founder Story" },
   ];
+
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 animate-fade-in">
+    <header
+      className="fixed top-0 left-0 right-0 z-50 animate-fade-in transition-all duration-300"
+      style={
+        scrolled
+          ? {
+              background: "rgba(10,12,16,0.7)",
+              backdropFilter: "blur(14px) saturate(140%)",
+              borderBottom: "1px solid rgba(255,255,255,0.06)",
+            }
+          : { background: "transparent" }
+      }
+    >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 md:py-5">
         <a href="#top" className="flex items-center gap-3">
           <img
@@ -27,7 +48,6 @@ export function Nav() {
               key={l.href}
               href={l.href}
               className="relative transition-colors hover:text-teal-soft"
-              style={{ color: undefined }}
             >
               {l.label}
             </a>
