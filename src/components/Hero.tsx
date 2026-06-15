@@ -44,32 +44,7 @@ export function Hero() {
           className="pointer-events-auto relative h-[80%] w-[80%]"
           style={{ transformStyle: "preserve-3d" as const, transition: "transform 0.4s cubic-bezier(0.16,1,0.3,1)" }}
         >
-          {/* Orbiting rings — teal + gold layered */}
-          <div ref={ringRef} className="absolute inset-[8%] will-change-transform" style={{ transformStyle: "preserve-3d" as const }}>
-            <div className="absolute inset-0 rounded-full border animate-spin-slow"
-                 style={{ transform: "rotateX(72deg)", borderColor: "rgba(94,234,212,0.22)" }} />
-            <div className="absolute inset-[6%] rounded-full border"
-                 style={{ transform: "rotateX(72deg) rotateZ(45deg)", animation: "spin-slow 90s linear infinite reverse", borderColor: "rgba(212,175,55,0.16)" }} />
-            <div className="absolute inset-[14%] rounded-full border border-gold-soft/20"
-                 style={{ transform: "rotateX(60deg) rotateY(20deg)", animation: "spin-slow 120s linear infinite" }} />
-          </div>
-
-          {/* Expanding energy waves — alternating teal & gold */}
-          {[0, 1, 2].map((i) => (
-            <div
-              key={`wave-${i}`}
-              className="absolute inset-[10%] rounded-full border"
-              style={{
-                borderColor: i % 2 === 0 ? "rgba(94,234,212,0.35)" : "rgba(212,175,55,0.30)",
-                animation: `energy-wave 5s ease-out ${i * 1.6}s infinite`,
-                boxShadow: i % 2 === 0
-                  ? "0 0 50px rgba(20,184,166,0.35) inset, 0 0 50px rgba(20,184,166,0.35)"
-                  : "0 0 40px rgba(212,175,55,0.25) inset, 0 0 40px rgba(212,175,55,0.25)",
-              }}
-            />
-          ))}
-
-          {/* Brain image — breathing + tilted, teal-gold dual glow */}
+          {/* Brain image — subdued, warm glow only */}
           <img
             src={heroBg}
             alt="Glowing golden neural brain"
@@ -77,75 +52,14 @@ export function Hero() {
             height={1536}
             className="relative h-full w-full object-contain animate-brain-breathe"
             style={{
-              filter: "drop-shadow(0 0 60px rgba(20,184,166,0.55)) drop-shadow(0 0 90px rgba(212,175,55,0.45))",
-              transform: "translateZ(40px)",
+              filter: "drop-shadow(0 0 40px rgba(212,175,55,0.28))",
+              opacity: 0.9,
             }}
           />
 
-          {/* Halo pulse — teal */}
-          <div className="absolute inset-[12%] -z-10 rounded-full animate-pulse-glow"
-               style={{ background: "radial-gradient(closest-side, rgba(20,184,166,0.55), transparent 70%)" }} />
-
-          {/* Halo pulse — gold */}
-          <div className="absolute inset-[18%] -z-10 rounded-full animate-pulse-glow"
-               style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.55), transparent 70%)", animationDelay: "1.2s" }} />
-
-          {/* Inner core glow */}
-          <div className="absolute inset-[32%] -z-10 rounded-full"
-               style={{
-                 background: "radial-gradient(closest-side, rgba(94,234,212,0.65), transparent 70%)",
-                 animation: "pulse-glow 4s ease-in-out infinite",
-                 filter: "blur(30px)",
-               }} />
-
-          {/* Floating particle dots — teal + gold alternating */}
-          {[...Array(16)].map((_, i) => {
-            const angle = (i / 16) * Math.PI * 2;
-            const r = 40 + (i % 4) * 6;
-            const left = 50 + Math.cos(angle) * r;
-            const top = 50 + Math.sin(angle) * r;
-            const isTeal = i % 2 === 0;
-            return (
-              <span
-                key={i}
-                className="absolute h-1.5 w-1.5 rounded-full"
-                style={{
-                  left: `${left}%`,
-                  top: `${top}%`,
-                  background: isTeal ? "var(--color-teal-soft)" : "var(--color-gold)",
-                  boxShadow: isTeal
-                    ? "0 0 14px var(--color-teal), 0 0 30px rgba(20,184,166,0.7)"
-                    : "0 0 14px var(--color-gold), 0 0 30px rgba(212,175,55,0.6)",
-                  animation: `synapse-spark ${3 + (i % 5) * 0.7}s ease-in-out ${i * 0.25}s infinite`,
-                  transform: "translateZ(60px)",
-                }}
-              />
-            );
-          })}
-
-          {/* Drifting outer sparks */}
-          {[...Array(10)].map((_, i) => {
-            const angle = (i / 10) * Math.PI * 2 + 0.4;
-            const r = 58 + (i % 2) * 4;
-            const left = 50 + Math.cos(angle) * r;
-            const top = 50 + Math.sin(angle) * r;
-            const isTeal = i % 3 !== 0;
-            return (
-              <span
-                key={`out-${i}`}
-                className="absolute h-1 w-1 rounded-full"
-                style={{
-                  left: `${left}%`,
-                  top: `${top}%`,
-                  background: isTeal ? "var(--color-teal-soft)" : "var(--color-gold-soft)",
-                  boxShadow: isTeal
-                    ? "0 0 12px var(--color-teal-soft)"
-                    : "0 0 10px var(--color-gold-soft)",
-                  animation: `float-slow ${10 + (i % 3) * 2}s ease-in-out ${i * 0.5}s infinite`,
-                }}
-              />
-            );
-          })}
+          {/* Soft warm halo */}
+          <div className="absolute inset-[18%] -z-10 rounded-full"
+               style={{ background: "radial-gradient(closest-side, rgba(212,175,55,0.28), transparent 70%)", filter: "blur(20px)" }} />
         </div>
       </div>
 
