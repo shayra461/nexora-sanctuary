@@ -47,7 +47,7 @@ export function Hero() {
           {/* Brain image — subdued, warm glow only */}
           <img
             src={heroBg}
-            alt="Glowing golden neural brain"
+            alt="Bridge Healing Alliance symbolic visual"
             width={1536}
             height={1536}
             className="relative h-full w-full object-contain animate-brain-breathe"
