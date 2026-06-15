@@ -2,7 +2,7 @@ import scienceImg from "@/assets/science-architecture.jpg";
 
 export function ScienceSection() {
   return (
-    <section id="science" className="relative py-24 md:py-32">
+    <section id="founder-story" className="relative py-24 md:py-32">
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:grid-cols-2 md:gap-24 md:px-10">
         {/* Image */}
         <div className="reveal relative">
@@ -93,8 +93,6 @@ export function ScienceSection() {
             </p>
             <p>
               Together with the{" "}
-              <span className="text-foreground/90">NeuroSmooth Ecosystem</span>{" "}
-              and the{" "}
               <span className="text-foreground/90">Bridge Healing Method</span>,
               our purpose is to help people reconnect with their strength,
               rediscover their purpose, and embrace the possibility of what
@@ -105,8 +103,14 @@ export function ScienceSection() {
               It is about becoming who you were meant to be.
             </p>
             <p className="mt-4 text-sm tracking-[0.25em] uppercase text-teal-soft">
-              — LBJ · Founder, Bridge Healing Alliance
+              — LBJ · Founder, Bridge Healing Alliance™
             </p>
+          </div>
+
+          <div className="mt-10">
+            <a href="#waitlist" className="btn-teal">
+              Start Your Rebuilding Journey <span aria-hidden>→</span>
+            </a>
           </div>
 
           <div className="divider-teal mt-12 w-48" />

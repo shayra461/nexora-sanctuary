@@ -67,9 +67,9 @@ export function EcosystemOverview() {
     <section id="ecosystem" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mx-auto max-w-2xl text-center">
-          <div className="eyebrow-teal justify-center">NeuroSmooth Ecosystem</div>
+          <div className="eyebrow-teal justify-center">Bridge Healing Alliance™</div>
           <h2 className="font-display mt-7 text-[clamp(2.2rem,5vw,4.4rem)] leading-[1.05]">
-            One <span className="italic text-teal-gold-gradient">vision</span>. Three doors.
+            One <span className="italic text-teal-gold-gradient">Universe</span>. Three Doors.
           </h2>
           <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
             A movement, a sound, and a method — each a doorway into the same
@@ -138,6 +138,13 @@ export function EcosystemOverview() {
               </article>
             );
           })}
+        </div>
+
+        {/* Section CTA */}
+        <div className="reveal mt-20 flex justify-center">
+          <a href="#waitlist" className="btn-teal">
+            Begin Your Journey <span aria-hidden>→</span>
+          </a>
         </div>
       </div>
     </section>
