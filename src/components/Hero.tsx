@@ -37,7 +37,7 @@ export function Hero() {
       {/* Right-side glowing 3D brain stage with mouse tilt */}
       <div
         ref={brainRef}
-        className="pointer-events-none absolute inset-y-0 right-0 z-[2] hidden w-[58%] items-center justify-center will-change-transform md:flex"
+        className="pointer-events-none absolute inset-y-0 right-0 z-[2] hidden w-[45%] items-center justify-center will-change-transform lg:flex xl:w-[50%]"
       >
         <div
           ref={stageRef}
