@@ -160,14 +160,14 @@ export function Hero() {
            style={{ background: "linear-gradient(90deg, rgba(15,17,21,0.95) 0%, rgba(15,17,21,0.85) 35%, rgba(15,17,21,0.4) 60%, transparent 80%)" }} />
 
       {/* Foreground content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-32 md:px-10">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-44 pb-24 md:px-10 md:pt-52 md:pb-32">
         <div ref={textRef} className="will-change-transform md:max-w-[58%]">
           <div className="eyebrow-teal animate-fade-up" style={{ animationDelay: "0.15s" }}>
             Bridge Healing Alliance™ · A Rebuilding Movement
           </div>
 
           <h1
-            className="font-display mt-7 text-[clamp(2.5rem,7.4vw,7.2rem)] leading-[1.02] tracking-tight text-foreground animate-fade-up"
+            className="font-display mt-6 text-[clamp(2rem,4.6vw,4.25rem)] leading-[1.05] tracking-tight text-foreground animate-fade-up"
             style={{ animationDelay: "0.4s" }}
           >
             [FINAL HEADLINE — <span className="text-teal-gold-gradient italic">to be provided by founder</span>]
