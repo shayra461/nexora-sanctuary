@@ -63,19 +63,19 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Mobile: centered subdued brain backdrop */}
-      <div className="pointer-events-none absolute inset-0 md:hidden">
-        <img src={heroBg} alt="" className="h-full w-full object-cover opacity-30 animate-float-slow" />
+      {/* Mobile + tablet: centered subdued brain backdrop */}
+      <div className="pointer-events-none absolute inset-0 lg:hidden">
+        <img src={heroBg} alt="" className="h-full w-full object-cover opacity-25 animate-float-slow" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, rgba(15,17,21,0.7) 0%, rgba(15,17,21,0.95) 100%)" }} />
       </div>
 
       {/* Left-side darkening veil */}
-      <div className="pointer-events-none absolute inset-0 hidden md:block"
-           style={{ background: "linear-gradient(90deg, rgba(15,17,21,0.95) 0%, rgba(15,17,21,0.85) 35%, rgba(15,17,21,0.4) 60%, transparent 80%)" }} />
+      <div className="pointer-events-none absolute inset-0 hidden lg:block"
+           style={{ background: "linear-gradient(90deg, rgba(15,17,21,0.96) 0%, rgba(15,17,21,0.88) 40%, rgba(15,17,21,0.45) 62%, transparent 82%)" }} />
 
       {/* Foreground content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-44 pb-24 md:px-10 md:pt-52 md:pb-32">
-        <div ref={textRef} className="will-change-transform md:max-w-[58%]">
+        <div ref={textRef} className="will-change-transform lg:max-w-[55%]">
           <div className="eyebrow-teal animate-fade-up" style={{ animationDelay: "0.15s" }}>
             Bridge Healing Alliance™ · A Rebuilding Movement
           </div>
