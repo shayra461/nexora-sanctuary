@@ -77,14 +77,14 @@ export function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-44 pb-24 md:px-10 md:pt-52 md:pb-32">
         <div ref={textRef} className="will-change-transform lg:max-w-[55%]">
           <div className="eyebrow-teal animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            Bridge Healing Alliance™ · A Rebuilding Movement
+            Bridge Healing Alliance™ · A Movement for Healing, Resilience & Renewal
           </div>
 
           <h1
             className="font-display mt-6 text-[clamp(2rem,4.6vw,4.25rem)] leading-[1.05] tracking-tight text-foreground animate-fade-up"
             style={{ animationDelay: "0.4s" }}
           >
-            [FINAL HEADLINE — <span className="text-teal-gold-gradient italic">to be provided by founder</span>]
+            Healing <span className="text-teal-gold-gradient italic">Beyond Recovery.</span>
           </h1>
 
           {/* Supporting line directly under headline */}
