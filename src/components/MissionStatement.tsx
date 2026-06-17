@@ -16,10 +16,10 @@ export function MissionStatement() {
           className="reveal mt-8 text-base leading-relaxed text-muted-foreground md:text-lg"
           style={{ transitionDelay: "0.2s" }}
         >
-          Bridge Healing Alliance is a premium personal rebuilding movement for
-          individuals who have faced life's greatest challenges — and are ready
-          to rebuild their strength, confidence, and purpose. Founded by a
-          survivor. Built entirely from lived experience.
+          Bridge Healing Alliance was created to help people move forward after
+          life's greatest challenges. Through advocacy, education, community,
+          and meaningful experiences, we help individuals rebuild strength,
+          confidence, purpose, and possibility.
         </p>
         <div className="divider-teal mx-auto mt-12 w-40" />
       </div>
