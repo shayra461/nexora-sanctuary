@@ -14,15 +14,14 @@ export function Waitlist() {
       </div>
 
       <div className="mx-auto max-w-3xl px-6 text-center md:px-10">
-        <div className="reveal eyebrow-teal justify-center">The Founders Circle · By Invitation</div>
+        <div className="reveal eyebrow-teal justify-center">Join the Founding Circle</div>
         <h2 className="reveal font-display mt-8 text-[clamp(2.4rem,6vw,5.2rem)] leading-[1.02]"
             style={{ transitionDelay: "0.15s" }}>
-          Step into the <span className="italic text-teal-gold-gradient">next version of you</span>.
+          Join the <span className="italic text-teal-gold-gradient">Founding Circle</span>.
         </h2>
         <p className="reveal mt-8 text-base text-muted-foreground md:text-lg" style={{ transitionDelay: "0.3s" }}>
-          Join the founding circle for early access to the vision, intimate
-          updates from the journey, and an invitation into a global movement of
-          leaders rebuilding stronger lives.
+          Join a growing community committed to healing, resilience, and
+          purposeful living.
         </p>
 
         <form

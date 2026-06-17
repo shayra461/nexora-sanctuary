@@ -77,7 +77,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-44 pb-24 md:px-10 md:pt-52 md:pb-32">
         <div ref={textRef} className="will-change-transform lg:max-w-[55%]">
           <div className="eyebrow-teal animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            Bridge Healing Alliance™ · A Movement for Healing, Resilience & Renewal
+            Bridge Healing Alliance™ · A Movement for Healing, Resilience & Renewed Healing
           </div>
 
           <h1
