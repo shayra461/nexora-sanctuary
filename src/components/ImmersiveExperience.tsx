@@ -21,7 +21,7 @@ const cards: Card[] = [
   },
   {
     name: "NeuroSmooth Flow™",
-    tag: "Method · Resilience",
+    tag: "Experience · Resilience",
     title: "Reclaim your strength.",
     body: "A guided rebuilding path to help you reclaim clarity and step into your next chapter — one grounded step at a time.",
     image: flowImg,
@@ -34,13 +34,13 @@ export function ImmersiveExperience() {
     <section id="experience" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mx-auto max-w-3xl text-center">
-          <div className="eyebrow-teal justify-center">The Bridge Healing Method</div>
+          <div className="eyebrow-teal justify-center">The Bridge Healing Experience</div>
           <h2 className="font-display mt-7 text-[clamp(2rem,5vw,4.2rem)] leading-[1.05]">
             Rebuild strength. <span className="italic text-teal-gold-gradient">Reclaim possibility.</span>
           </h2>
           <div className="mt-8 space-y-5 text-center text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
-              The <span className="text-foreground/90">Bridge Healing Method™</span> is
+              The <span className="text-foreground/90">Bridge Healing Experience™</span> is
               the guiding philosophy behind everything we create.
             </p>
             <p>
@@ -49,7 +49,7 @@ export function ImmersiveExperience() {
               rebuilding life after adversity.
             </p>
             <p>
-              Rather than focusing solely on recovery, the Method encourages
+              Rather than focusing solely on recovery, the Experience encourages
               individuals to strengthen the mind, restore confidence, cultivate
               resilience, and move forward with renewed purpose.
             </p>

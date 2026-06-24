@@ -44,8 +44,8 @@ const brands: Brand[] = [
   },
   {
     name: "NeuroSmooth Flow™",
-    tag: "The Method",
-    role: "The rebuilding method",
+    tag: "The Experience",
+    role: "The rebuilding experience",
     body: "Guided rituals and practices that help you reclaim clarity, ground your strength and step into the next version of you.",
     cta: "Learn More",
     href: "#experience",

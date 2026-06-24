@@ -8,7 +8,7 @@ const logoUrl = logoAsset.url.startsWith("http")
 export function Nav() {
   const links = [
     { href: "#ecosystem", label: "The Vision" },
-    { href: "#experience", label: "The Method" },
+    { href: "#experience", label: "The Experience" },
     { href: "#founder-story", label: "Founder Story" },
   ];
 
