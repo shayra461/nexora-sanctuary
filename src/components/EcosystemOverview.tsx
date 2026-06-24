@@ -71,11 +71,19 @@ export function EcosystemOverview() {
           <h2 className="font-display mt-7 text-[clamp(2.2rem,5vw,4.4rem)] leading-[1.05]">
             One <span className="italic text-teal-gold-gradient">Purpose</span>. Three Pathways.
           </h2>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-            A movement, a sound, and a method — each a doorway into the same
-            proven path: rebuilding stronger lives through resilience, purpose,
-            and personal rebuilding.
-          </p>
+          <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p>
+              <span className="text-foreground/90">Bridge Healing Alliance™</span>,{" "}
+              <span className="text-foreground/90">NeuroSmooth Jazz™</span>, and{" "}
+              <span className="text-foreground/90">NeuroSmooth Flow™</span> represent
+              three distinct expressions of a shared vision.
+            </p>
+            <p>
+              Together, they create an ecosystem dedicated to helping
+              individuals reconnect with strength, confidence, purpose, and
+              possibility.
+            </p>
+          </div>
           <div className="divider-teal mx-auto mt-10 w-40" />
         </div>
 
