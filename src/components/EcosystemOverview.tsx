@@ -47,7 +47,7 @@ const brands: Brand[] = [
     tag: "The Method",
     role: "The rebuilding method",
     body: "Guided rituals and practices that help you reclaim clarity, ground your strength and step into the next version of you.",
-    cta: "Find Your Flow",
+    cta: "Learn More",
     href: "#experience",
     image: flowImg,
     logo: flowLogo,
