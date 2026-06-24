@@ -38,7 +38,7 @@ export function ImmersiveExperience() {
           <h2 className="font-display mt-7 text-[clamp(2rem,5vw,4.2rem)] leading-[1.05]">
             Rebuild strength. <span className="italic text-teal-gold-gradient">Reclaim possibility.</span>
           </h2>
-          <div className="mt-8 space-y-5 text-left text-base leading-relaxed text-muted-foreground md:text-lg">
+          <div className="mt-8 space-y-5 text-center text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
               The <span className="text-foreground/90">Bridge Healing Method™</span> is
               the guiding philosophy behind everything we create.
