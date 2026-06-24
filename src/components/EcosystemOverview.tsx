@@ -36,7 +36,7 @@ const brands: Brand[] = [
     tag: "The Sound",
     role: "Resilience through sound",
     body: "Cinematic, soul-tuned compositions that decompress the mind and reawaken the inner pulse of purpose.",
-    cta: "Enter the Sound",
+    cta: "Learn More",
     href: "#experience",
     image: jazzImg,
     logo: jazzLogo,
