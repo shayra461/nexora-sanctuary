@@ -100,7 +100,7 @@ export function ScienceSection() {
 
           <div className="mt-10">
             <a href="#waitlist" className="btn-teal">
-              Start Your Rebuilding Journey <span aria-hidden>→</span>
+              Begin Your Journey <span aria-hidden>→</span>
             </a>
           </div>
 

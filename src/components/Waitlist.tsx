@@ -44,7 +44,7 @@ export function Waitlist() {
             />
           </div>
           <button type="submit" className="btn-teal justify-center">
-            {sent ? "Welcome ✦" : "Request Access"}
+            {sent ? "Welcome ✦" : "Join The Founding Circle"}
           </button>
         </form>
 
