@@ -29,7 +29,7 @@ export function Footer() {
             <li><a className="transition-colors hover:text-gold" href="#experience">NeuroSmooth Jazz™</a></li>
             <li><a className="transition-colors hover:text-gold" href="#experience">NeuroSmooth Flow™</a></li>
             <li><a className="transition-colors hover:text-gold" href="#founder-story">Founder Story</a></li>
-            <li><a className="transition-colors hover:text-gold" href="#waitlist">Join the Movement</a></li>
+            <li><a className="transition-colors hover:text-gold" href="#waitlist">Join The Founding Circle</a></li>
           </ul>
         </div>
 
