@@ -25,7 +25,7 @@ const brands: Brand[] = [
     tag: "The Movement",
     role: "A global rebuilding alliance",
     body: "A movement built on lived experience — guiding leaders, survivors and seekers to rebuild stronger lives.",
-    cta: "Join the Movement",
+    cta: "Learn More",
     href: "#waitlist",
     image: bridgeImg,
     logo: bridgeLogo,
