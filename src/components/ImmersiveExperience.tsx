@@ -38,11 +38,28 @@ export function ImmersiveExperience() {
           <h2 className="font-display mt-7 text-[clamp(2rem,5vw,4.2rem)] leading-[1.05]">
             Rebuild strength. <span className="italic text-teal-gold-gradient">Reclaim possibility.</span>
           </h2>
-          <p className="mt-6 text-base leading-relaxed text-muted-foreground md:text-lg">
-            A rebuilding approach for reclaiming strength, resilience,
-            purpose, and possibility after life's greatest challenges.
-          </p>
-          <div className="divider-teal mx-auto mt-8 w-32" />
+          <div className="mt-8 space-y-5 text-left text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p>
+              The <span className="text-foreground/90">Bridge Healing Method™</span> is
+              the guiding philosophy behind everything we create.
+            </p>
+            <p>
+              Built upon lived experience and informed by resilience,
+              reflection, and growth, it offers a holistic approach to
+              rebuilding life after adversity.
+            </p>
+            <p>
+              Rather than focusing solely on recovery, the Method encourages
+              individuals to strengthen the mind, restore confidence, cultivate
+              resilience, and move forward with renewed purpose.
+            </p>
+            <p className="font-display text-lg italic text-foreground/95 md:text-xl">
+              Because healing is not simply about returning to where we were.
+              <br />
+              It is about building what comes next.
+            </p>
+          </div>
+          <div className="divider-teal mx-auto mt-10 w-32" />
         </div>
 
         <div className="mt-20 grid gap-8 md:grid-cols-2">
