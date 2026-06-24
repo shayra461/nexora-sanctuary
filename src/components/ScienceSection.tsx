@@ -60,47 +60,38 @@ export function ScienceSection() {
           </h2>
 
           <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground md:text-[1.05rem]">
-            <p>
-              Bridge Healing Alliance was born from one of the most challenging
-              seasons of my life.
+            <p className="font-display text-lg italic text-foreground/95 md:text-xl">
+              Some experiences change the course of a life.
             </p>
             <p>
-              After facing a life-altering health crisis that disrupted nearly
-              every aspect of my world, I discovered that healing is about far
-              more than physical recovery. True healing is the process of
-              rebuilding confidence, restoring purpose, reclaiming identity,
-              and finding the courage to move forward when the path ahead is
-              uncertain.
+              What began as a life-altering challenge became a deeper
+              understanding of resilience, healing, and the power of rebuilding
+              from within.
             </p>
             <p>
-              Throughout my journey, I learned that progress is rarely linear.
-              It is built through resilience, faith, perseverance, and the
-              decision to keep moving forward one step at a time.
-            </p>
-            <p>
-              That experience changed my perspective and inspired a greater
-              mission: to create meaningful resources, immersive
-              experiences, and a supportive community for individuals whose
-              lives have been interrupted by adversity, setbacks, health
-              challenges, or unexpected turns.
+              During a season marked by uncertainty, loss of independence, and
+              the challenge of starting over, founder LBJ discovered that
+              healing is about more than recovery. It is about restoring
+              confidence, reclaiming purpose, and creating new possibilities
+              for the future.
             </p>
             <p className="text-foreground/90">
-              From that vision,{" "}
+              That experience inspired the creation of{" "}
               <span className="text-teal-gold-gradient italic">
                 Bridge Healing Alliance
-              </span>{" "}
-              was created.
+              </span>
+              —a movement dedicated to helping individuals move forward through
+              life's greatest challenges.
             </p>
             <p>
-              Together with the{" "}
-              <span className="text-foreground/90">Bridge Healing Method</span>,
-              our purpose is to help people reconnect with their strength,
-              rediscover their purpose, and embrace the possibility of what
-              comes next.
+              Today, our mission is to provide pathways for healing,
+              resilience, growth, and renewal through advocacy, education,
+              meaningful experiences, and community.
             </p>
             <p className="font-display text-lg italic text-foreground/95 md:text-xl">
-              Because healing is not simply about returning to who you were.
-              It is about becoming who you were meant to be.
+              Because healing is not simply about what we overcome.
+              <br />
+              It is about what we build next.
             </p>
             <p className="mt-4 text-sm tracking-[0.25em] uppercase text-teal-soft">
               — LBJ · Founder, Bridge Healing Alliance™
