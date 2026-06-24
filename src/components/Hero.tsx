@@ -97,17 +97,24 @@ export function Hero() {
           </p>
 
           <p
-            className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
+            className="mt-6 max-w-xl text-base leading-relaxed text-foreground/85 md:text-lg animate-fade-up"
             style={{ animationDelay: "0.6s" }}
           >
-            [FINAL TAGLINE — to be provided by founder]
+            We believe healing is more than what we overcome.
           </p>
 
           <p
-            className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base animate-fade-up"
+            className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
             style={{ animationDelay: "0.7s" }}
           >
-            [FINAL BODY COPY — to be provided by founder]
+            It is the process of rebuilding strength, restoring confidence, rediscovering purpose, and creating new possibilities for the future.
+          </p>
+
+          <p
+            className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
+            style={{ animationDelay: "0.8s" }}
+          >
+            Through advocacy, education, wellness experiences, and community, we help individuals move forward with resilience, renewal, and hope.
           </p>
 
 
