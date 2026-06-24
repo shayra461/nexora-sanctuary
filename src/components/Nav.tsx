@@ -53,7 +53,7 @@ export function Nav() {
             </a>
           ))}
         </nav>
-        <a href="#waitlist" className="btn-ghost-teal !py-2.5 !px-5 text-[0.68rem]">Join the Movement</a>
+        <a href="#waitlist" className="btn-ghost-teal !py-2.5 !px-5 text-[0.68rem]">Join The Founding Circle</a>
       </div>
     </header>
   );
