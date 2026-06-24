@@ -129,7 +129,7 @@ export function Hero() {
 
           <div className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: "0.95s" }}>
             <a href="#ecosystem" className="btn-teal">Begin Your Journey <span aria-hidden>→</span></a>
-            <a href="#founder-story" className="btn-ghost-gold">Read the Founder Story</a>
+            <a href="#founder-story" className="btn-ghost-gold">Learn More</a>
           </div>
         </div>
       </div>
