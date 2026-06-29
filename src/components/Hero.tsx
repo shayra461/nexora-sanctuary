@@ -77,7 +77,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-44 pb-24 md:px-10 md:pt-52 md:pb-32">
         <div ref={textRef} className="will-change-transform lg:max-w-[55%]">
           <div className="eyebrow-teal animate-fade-up" style={{ animationDelay: "0.15s" }}>
-            Bridge Healing Alliance™ · A Movement for Healing, Resilience & Renewed Healing
+            Bridge Healing Alliance™ · A Movement for Healing, Resilience & Renewal
           </div>
 
           <h1
@@ -87,34 +87,25 @@ export function Hero() {
             Healing <span className="text-teal-gold-gradient italic">Beyond Recovery.</span>
           </h1>
 
-          {/* Supporting line directly under headline */}
-          <p
-            className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/85 md:text-lg animate-fade-up"
-            style={{ animationDelay: "0.5s" }}
-          >
-            Helping people rebuild strength, confidence, and purpose after
-            life's greatest challenges.
-          </p>
-
           <p
             className="mt-6 max-w-xl text-base leading-relaxed text-foreground/85 md:text-lg animate-fade-up"
-            style={{ animationDelay: "0.6s" }}
+            style={{ animationDelay: "0.5s" }}
           >
             We believe healing is more than what we overcome.
           </p>
 
           <p
             className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
-            style={{ animationDelay: "0.7s" }}
+            style={{ animationDelay: "0.6s" }}
           >
-            It is the process of rebuilding strength, restoring confidence, rediscovering purpose, and creating new possibilities for the future.
+            It is the lifelong process of rebuilding strength, restoring confidence, rediscovering purpose, and creating new possibilities for the future.
           </p>
 
           <p
             className="mt-4 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg animate-fade-up"
-            style={{ animationDelay: "0.8s" }}
+            style={{ animationDelay: "0.7s" }}
           >
-            Through advocacy, education, wellness experiences, and community, we help individuals move forward with resilience, renewal, and hope.
+            Through advocacy, education, meaningful experiences, and community, Bridge Healing Alliance exists to help individuals move forward with resilience, renewal, and hope.
           </p>
 
 
@@ -136,7 +127,7 @@ export function Hero() {
 
           <div className="mt-10 flex flex-wrap items-center gap-4 animate-fade-up" style={{ animationDelay: "0.95s" }}>
             <a href="#ecosystem" className="btn-teal">Begin Your Journey <span aria-hidden>→</span></a>
-            <a href="#founder-story" className="btn-ghost-gold">Learn More</a>
+            <a href="#founder-story" className="btn-ghost-gold">Read the Founder's Story</a>
           </div>
         </div>
       </div>
