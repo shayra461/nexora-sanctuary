@@ -5,7 +5,7 @@ export function ScienceSection() {
     <section id="founder-story" className="relative py-24 md:py-32">
       <div className="mx-auto grid max-w-7xl items-start gap-16 px-6 md:grid-cols-2 md:gap-24 md:px-10">
         {/* Image - sticky on desktop to keep it balanced with long text */}
-        <div className="reveal relative self-start lg:sticky lg:top-28">
+        <div className="reveal relative self-start lg:sticky lg:top-[180px]">
           <div
             className="relative overflow-hidden rounded-2xl"
             style={{
