@@ -15,14 +15,18 @@ export function Waitlist() {
 
       <div className="mx-auto max-w-3xl px-6 text-center md:px-10">
         <div className="reveal eyebrow-teal justify-center">Join the Founding Circle</div>
-        <h2 className="reveal font-display mt-8 text-[clamp(2.4rem,6vw,5.2rem)] leading-[1.02]"
+        <h2 className="reveal font-display mt-8 text-[clamp(2rem,5.2vw,4.5rem)] leading-[1.05]"
             style={{ transitionDelay: "0.15s" }}>
-          Join the <span className="italic text-teal-gold-gradient">Founding Circle</span>.
+          Healing was never meant to be <span className="italic text-teal-gold-gradient">experienced alone.</span>
         </h2>
-        <p className="reveal mt-8 text-base text-muted-foreground md:text-lg" style={{ transitionDelay: "0.3s" }}>
-          Join a growing community committed to healing, resilience, and
-          purposeful living.
-        </p>
+        <div className="reveal mt-8 space-y-4 text-base text-muted-foreground md:text-lg" style={{ transitionDelay: "0.3s" }}>
+          <p>
+            Join a growing community committed to healing, resilience, meaningful connection, and purposeful living.
+          </p>
+          <p>
+            Be among the first to receive exclusive updates, new resources, and early access as Bridge Healing Alliance continues to grow.
+          </p>
+        </div>
 
         <form
           onSubmit={(e) => { e.preventDefault(); if (email) setSent(true); }}
@@ -44,7 +48,7 @@ export function Waitlist() {
             />
           </div>
           <button type="submit" className="btn-teal justify-center">
-            {sent ? "Welcome ✦" : "Join The Founding Circle"}
+            {sent ? "Welcome ✦" : "Request Access"}
           </button>
         </form>
 
