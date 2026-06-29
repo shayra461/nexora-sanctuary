@@ -3,9 +3,9 @@ import scienceImg from "@/assets/science-architecture.jpg";
 export function ScienceSection() {
   return (
     <section id="founder-story" className="relative py-24 md:py-32">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 md:grid-cols-2 md:gap-24 md:px-10">
-        {/* Image */}
-        <div className="reveal relative">
+      <div className="mx-auto grid max-w-7xl items-start gap-16 px-6 md:grid-cols-2 md:gap-24 md:px-10">
+        {/* Image - sticky on desktop to keep it balanced with long text */}
+        <div className="reveal relative self-start lg:sticky lg:top-28">
           <div
             className="relative overflow-hidden rounded-2xl"
             style={{
@@ -20,7 +20,7 @@ export function ScienceSection() {
               loading="lazy"
               width={1536}
               height={1536}
-              className="h-[72vh] w-full object-cover"
+              className="aspect-[4/3] sm:aspect-[4/5] w-full object-cover"
             />
             <div
               className="absolute inset-0"
