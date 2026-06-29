@@ -53,45 +53,66 @@ export function ScienceSection() {
         <div className="reveal" style={{ transitionDelay: "0.15s" }}>
           <div className="eyebrow-teal text-base md:text-lg tracking-[0.45em]">Founder's Story</div>
           <h2 className="font-display mt-7 text-[clamp(2rem,4.6vw,3.8rem)] leading-[1.05] text-foreground">
-            From a life-altering crisis —{" "}
+            The Story Behind Bridge Healing Alliance{" "}
+            <br className="hidden sm:inline" />
             <span className="italic text-teal-gold-gradient">
-              a movement was born.
+              From Adversity to Purpose
             </span>
           </h2>
 
           <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground md:text-[1.05rem]">
             <p className="font-display text-lg italic text-foreground/95 md:text-xl">
-              Some experiences change the course of a life.
+              Some moments divide our lives into <em>before</em> and <em>after</em>.
+            </p>
+            <p>They arrive differently for each of us.</p>
+            
+            <div className="space-y-2 py-2 font-display text-lg text-foreground/90 italic pl-4 border-l border-teal-soft/30">
+              <p>A diagnosis.</p>
+              <p>An injury.</p>
+              <p>A loss.</p>
+              <p>A season of uncertainty that changes everything.</p>
+            </div>
+
+            <p>
+              Mine came through a life-altering health crisis that challenged nearly
+              every part of who I believed myself to be.
+            </p>
+            <p>As I began rebuilding, I discovered something unexpected.</p>
+            
+            <p className="font-display text-lg italic text-foreground/90">
+              Healing isn't simply about recovering what was lost.
+            </p>
+            
+            <div className="space-y-2 py-1 text-foreground/90 font-medium">
+              <p>It is about rebuilding confidence.</p>
+              <p>Rediscovering purpose.</p>
+              <p>Reclaiming identity.</p>
+              <p>Finding the courage to move forward even when the destination isn't yet clear.</p>
+            </div>
+
+            <p>Progress rarely happens all at once.</p>
+            <p>
+              It is built through resilience, faith, perseverance, and the willingness
+              to keep taking the next step.
             </p>
             <p>
-              What began as a life-altering challenge became a deeper
-              understanding of resilience, healing, and the power of rebuilding
-              from within.
-            </p>
-            <p>
-              During a season marked by uncertainty, loss of independence, and
-              the challenge of starting over, founder LBJ discovered that
-              healing is about more than recovery. It is about restoring
-              confidence, reclaiming purpose, and creating new possibilities
-              for the future.
+              That journey transformed more than my life. It inspired a mission.
             </p>
             <p className="text-foreground/90">
-              That experience inspired the creation of{" "}
-              <span className="text-teal-gold-gradient italic">
-                Bridge Healing Alliance
-              </span>
-              —a movement dedicated to helping individuals move forward through
-              life's greatest challenges.
+              Bridge Healing Alliance was created so others facing life's greatest
+              challenges would know they are not alone—that healing remains possible,
+              hope can be renewed, and purpose can be rediscovered.
             </p>
             <p>
-              Today, our mission is to provide pathways for healing,
-              resilience, growth, and renewal through advocacy, education,
-              meaningful experiences, and community.
+              Together with the Bridge Healing Experience™ and the NeuroSmooth
+              Ecosystem™, our purpose is to help people reconnect with their strength,
+              embrace new possibilities, and continue moving forward.
             </p>
-            <p className="font-display text-lg italic text-foreground/95 md:text-xl">
-              Because healing is not simply about what we overcome.
+
+            <p className="font-display text-lg italic text-foreground/95 md:text-xl pt-4">
+              Because healing isn't measured only by what we recover.
               <br />
-              It is about what we build next.
+              It's measured by what we choose to build next.
             </p>
             <p className="mt-4 text-sm tracking-[0.25em] uppercase text-teal-soft">
               — LBJ · Founder, Bridge Healing Alliance™
