@@ -34,29 +34,24 @@ export function ImmersiveExperience() {
     <section id="experience" className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6 md:px-10">
         <div className="reveal mx-auto max-w-3xl text-center">
-          <div className="eyebrow-teal justify-center">The Bridge Healing Experience</div>
+          <div className="eyebrow-teal justify-center">The Bridge Healing Method</div>
           <h2 className="font-display mt-7 text-[clamp(2rem,5vw,4.2rem)] leading-[1.05]">
-            Rebuild strength. <span className="italic text-teal-gold-gradient">Reclaim possibility.</span>
+            Rebuild Strength. <span className="italic text-teal-gold-gradient">Reclaim Possibility.</span>
           </h2>
           <div className="mt-8 space-y-5 text-center text-base leading-relaxed text-muted-foreground md:text-lg">
             <p>
-              The <span className="text-foreground/90">Bridge Healing Experience™</span> is
-              the guiding philosophy behind everything we create.
+              The <span className="text-foreground/90">Bridge Healing Method™</span> is the philosophy that guides everything we create.
             </p>
             <p>
-              Built upon lived experience and informed by resilience,
-              reflection, and growth, it offers a holistic approach to
-              rebuilding life after adversity.
+              Born from lived experience and shaped through resilience, reflection, and renewal, it offers a holistic approach to rebuilding life after adversity.
             </p>
             <p>
-              Rather than focusing solely on recovery, the Experience encourages
-              individuals to strengthen the mind, restore confidence, cultivate
-              resilience, and move forward with renewed purpose.
+              Rather than focusing solely on recovery, the Method encourages individuals to strengthen the mind, restore confidence, cultivate resilience, and move forward with renewed purpose.
             </p>
             <p className="font-display text-lg italic text-foreground/95 md:text-xl">
-              Because healing is not simply about returning to where we were.
+              Healing is not about returning to who we once were.
               <br />
-              It is about building what comes next.
+              It is about becoming who we are capable of becoming.
             </p>
           </div>
           <div className="divider-teal mx-auto mt-10 w-32" />
