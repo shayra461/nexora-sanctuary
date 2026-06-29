@@ -12,15 +12,27 @@ export function MissionStatement() {
             Bridge Healing Alliance?
           </span>
         </h2>
-        <p
-          className="reveal mt-8 text-base leading-relaxed text-muted-foreground md:text-lg"
+        <div
+          className="reveal mt-8 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg"
           style={{ transitionDelay: "0.2s" }}
         >
-          Bridge Healing Alliance was created to help people move forward after
-          life's greatest challenges. Through advocacy, education, community,
-          and meaningful experiences, we help individuals rebuild strength,
-          confidence, purpose, and possibility.
-        </p>
+          <p>
+            Bridge Healing Alliance was created to help people move forward after
+            life's greatest challenges.
+          </p>
+          <p>
+            Whether those challenges come through illness, injury, trauma, loss,
+            or unexpected change, we believe healing extends far beyond recovery.
+          </p>
+          <p>
+            Through advocacy, education, community, and meaningful experiences,
+            we help individuals rebuild strength, confidence, purpose, and
+            possibility.
+          </p>
+          <p className="font-display text-lg italic text-foreground/95 md:text-xl pt-4">
+            Because no one should have to rebuild alone.
+          </p>
+        </div>
         <div className="divider-teal mx-auto mt-12 w-40" />
       </div>
     </section>
