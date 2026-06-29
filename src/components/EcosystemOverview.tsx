@@ -23,9 +23,9 @@ const brands: Brand[] = [
   {
     name: "Bridge Healing Alliance™",
     tag: "The Movement",
-    role: "A global rebuilding alliance",
-    body: "A movement built on lived experience — guiding leaders, survivors and seekers to rebuild stronger lives.",
-    cta: "Learn More",
+    role: "Our Mission",
+    body: "Helping individuals rebuild after life's greatest challenges through advocacy, education, community, and hope.",
+    cta: "Explore Our Mission",
     href: "#waitlist",
     image: bridgeImg,
     logo: bridgeLogo,
@@ -34,9 +34,9 @@ const brands: Brand[] = [
   {
     name: "NeuroSmooth Jazz™",
     tag: "The Sound",
-    role: "Resilience through sound",
-    body: "Cinematic, soul-tuned compositions that decompress the mind and reawaken the inner pulse of purpose.",
-    cta: "Learn More",
+    role: "The Experience of Sound",
+    body: "Original music intentionally created to encourage reflection, relaxation, and emotional well-being.",
+    cta: "Experience NeuroSmooth Jazz™",
     href: "#experience",
     image: jazzImg,
     logo: jazzLogo,
@@ -45,9 +45,9 @@ const brands: Brand[] = [
   {
     name: "NeuroSmooth Flow™",
     tag: "The Experience",
-    role: "The rebuilding experience",
-    body: "Guided rituals and practices that help you reclaim clarity, ground your strength and step into the next version of you.",
-    cta: "Learn More",
+    role: "Daily Practices for Intentional Living",
+    body: "Guided experiences designed to help restore calm, strengthen resilience, and create space for renewal.",
+    cta: "Discover NeuroSmooth Flow™",
     href: "#experience",
     image: flowImg,
     logo: flowLogo,
@@ -69,19 +69,20 @@ export function EcosystemOverview() {
         <div className="reveal mx-auto max-w-2xl text-center">
           <div className="eyebrow-teal justify-center">Bridge Healing Alliance™</div>
           <h2 className="font-display mt-7 text-[clamp(2.2rem,5vw,4.4rem)] leading-[1.05]">
-            One <span className="italic text-teal-gold-gradient">Purpose</span>. Three Pathways.
+            One Purpose. <span className="italic text-teal-gold-gradient">Three Pathways.</span>
           </h2>
           <div className="mt-8 space-y-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            <p>
-              <span className="text-foreground/90">Bridge Healing Alliance™</span>,{" "}
-              <span className="text-foreground/90">NeuroSmooth Jazz™</span>, and{" "}
-              <span className="text-foreground/90">NeuroSmooth Flow™</span> represent
-              three distinct expressions of a shared vision.
+            <p className="text-foreground/90 font-medium">
+              Every journey forward looks different.
             </p>
             <p>
-              Together, they create an ecosystem dedicated to helping
-              individuals reconnect with strength, confidence, purpose, and
-              possibility.
+              That is why Bridge Healing Alliance has created three distinct pathways united by one shared purpose:
+            </p>
+            <p className="font-display text-lg italic text-foreground/95 md:text-xl">
+              Helping people reconnect with strength, resilience, purpose, and possibility.
+            </p>
+            <p>
+              Whether through advocacy, meaningful experiences, or restorative practices, each pathway offers a different way to continue moving forward.
             </p>
           </div>
           <div className="divider-teal mx-auto mt-10 w-40" />
